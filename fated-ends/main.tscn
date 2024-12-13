@@ -4,8 +4,8 @@
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
 [ext_resource type="PackedScene" uid="uid://brl6wp7kn66xq" path="res://Scenes/boulder_trap.tscn" id="3_h43rd"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="4_soyn3"]
+[ext_resource type="PackedScene" uid="uid://dd6dpb8jwuad8" path="res://dead_player.tscn" id="5_ltf40"]
 [ext_resource type="Script" path="res://Scripts/timer_manager.gd" id="5_luvpe"]
-[ext_resource type="PackedScene" uid="uid://dlf0sp6f7rqd7" path="res://skull_04.tscn" id="5_rig4n"]
 [ext_resource type="FontFile" uid="uid://c4ugdy6ujc4b5" path="res://Retro Gaming.ttf" id="7_j53xk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
@@ -20,8 +20,10 @@ background_mode = 2
 sky = SubResource("Sky_3neoc")
 tonemap_mode = 2
 glow_enabled = true
+volumetric_fog_density = 0.1
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0183811, 2.38419e-07, 0.00449753)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pyexv")
@@ -29,7 +31,6 @@ environment = SubResource("Environment_pyexv")
 [node name="player" parent="." instance=ExtResource("1_4axfq")]
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.172473, 1.75977, -1.07665)
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("2_n0xd5")
@@ -47,7 +48,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6491, 2.15774, -6.7238)
 [node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("player")]
 script = ExtResource("4_soyn3")
 player = NodePath("../player")
-corpse_scene = ExtResource("5_rig4n")
+corpse_scene = ExtResource("5_ltf40")
 
 [node name="TimerManager" type="Node" parent="."]
 script = ExtResource("5_luvpe")
