@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://dncv1j7hufsuy" path="res://Scenes/Player/player.tscn" id="1_4axfq"]
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
-[ext_resource type="PackedScene" uid="uid://cekynipqs7un6" path="res://Scenes/boulder_trap.tscn" id="3_h43rd"]
+[ext_resource type="PackedScene" uid="uid://brl6wp7kn66xq" path="res://Scenes/boulder_trap.tscn" id="3_h43rd"]
 [ext_resource type="Script" path="res://Scripts/game_manager.gd" id="4_soyn3"]
 [ext_resource type="PackedScene" uid="uid://dd6dpb8jwuad8" path="res://dead_player.tscn" id="5_ltf40"]
 [ext_resource type="Script" path="res://Scripts/timer_manager.gd" id="5_luvpe"]
 [ext_resource type="FontFile" uid="uid://c4ugdy6ujc4b5" path="res://Retro Gaming.ttf" id="7_j53xk"]
-[ext_resource type="PackedScene" uid="uid://b8un2jfgfcm82" path="res://Scenes/Player/test_block.tscn" id="8_b6lgw"]
+[ext_resource type="PackedScene" path="res://Scenes/Player/test_block.tscn" id="8_b6lgw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -23,6 +23,7 @@ tonemap_mode = 2
 glow_enabled = true
 glow_normalized = true
 glow_blend_mode = 0
+volumetric_fog_enabled = true
 volumetric_fog_density = 0.1
 
 [node name="Node3D" type="Node3D"]
