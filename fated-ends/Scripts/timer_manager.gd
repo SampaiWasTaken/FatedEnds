@@ -7,7 +7,7 @@ extends Node
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Get the Label node. Make sure to drag and drop your Label into this variable in the Inspector
-	timer_label = $CanvasLayer/DeathTimerLabel  # Adjust the path if necessary
+	timer_label = $"../CanvasLayer/DeathTimerLabel"  # Adjust the path if necessary
 	
 	# Optionally set label's initial text
 	timer_label.text = str(timer_duration)

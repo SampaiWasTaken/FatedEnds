@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dffai7cb8sehi"]
+[gd_scene load_steps=11 format=3 uid="uid://dffai7cb8sehi"]
 
 [ext_resource type="PackedScene" uid="uid://dncv1j7hufsuy" path="res://Scenes/Player/player.tscn" id="1_4axfq"]
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
-[ext_resource type="PackedScene" path="res://Scenes/boulder_trap.tscn" id="3_h43rd"]
+[ext_resource type="PackedScene" uid="uid://brl6wp7kn66xq" path="res://Scenes/boulder_trap.tscn" id="3_h43rd"]
+[ext_resource type="Script" path="res://Scripts/game_manager.gd" id="4_soyn3"]
+[ext_resource type="Script" path="res://Scripts/timer_manager.gd" id="5_luvpe"]
+[ext_resource type="PackedScene" uid="uid://dlf0sp6f7rqd7" path="res://skull_04.tscn" id="5_rig4n"]
+[ext_resource type="FontFile" uid="uid://c4ugdy6ujc4b5" path="res://Retro Gaming.ttf" id="7_j53xk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -39,3 +43,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78081, 2.69867, 14.1243)
 
 [node name="Node3D" parent="." instance=ExtResource("3_h43rd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6491, 2.15774, -6.7238)
+
+[node name="GameManager" type="Node" parent="." node_paths=PackedStringArray("player")]
+script = ExtResource("4_soyn3")
+player = NodePath("../player")
+corpse_scene = ExtResource("5_rig4n")
+
+[node name="TimerManager" type="Node" parent="."]
+script = ExtResource("5_luvpe")
+timer_duration = 30.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="DeathTimerLabel" type="Label" parent="CanvasLayer"]
+offset_right = 117.0
+offset_bottom = 34.0
+theme_override_fonts/font = ExtResource("7_j53xk")
+theme_override_font_sizes/font_size = 20
+text = "asd"
