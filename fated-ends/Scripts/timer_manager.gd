@@ -3,7 +3,7 @@ extends Node
 @export var timer_duration: float # Set your timer duration here
 @onready var timer: float = timer_duration  # Timer starts at the set duration
 @onready var timer_label: Label  # The label that will display the timer
-
+@onready var audioPlayer: AudioStreamPlayer = $"../AudioStreamPlayer"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Get the Label node. Make sure to drag and drop your Label into this variable in the Inspector
@@ -20,6 +20,7 @@ func _process(delta):
 	timer_label.text = "Time Remaining: " + str(int(timer))
 	
 	if timer <= 10:
+		audioPlayer.play()
 		timer_label.set("theme_override_colors/font_color", Color.RED) # Red color for low time
 	else:
 		timer_label.set("theme_override_colors/font_color", Color.WHITE) # Reset to default color

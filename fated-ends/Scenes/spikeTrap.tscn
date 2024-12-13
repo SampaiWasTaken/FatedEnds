@@ -1,0 +1,74 @@
+[gd_scene load_steps=5 format=3 uid="uid://is11n82l1jah"]
+
+[ext_resource type="PackedScene" uid="uid://c5m6ffrrtach5" path="res://Scenes/trap.tscn" id="1_hwgw8"]
+[ext_resource type="Texture2D" uid="uid://8e1xtpgexm2y" path="res://Assets/Textures/100_1374_seamless.jpg" id="2_sn1gx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e01q3"]
+albedo_texture = ExtResource("2_sn1gx")
+
+[sub_resource type="PrismMesh" id="PrismMesh_1o5cg"]
+material = SubResource("StandardMaterial3D_e01q3")
+
+[node name="origin" instance=ExtResource("1_hwgw8")]
+
+[node name="CollisionShape3D" parent="DeathPlane" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00167918, 0)
+
+[node name="Spikes" type="Node3D" parent="." index="1"]
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Spikes" index="0"]
+transform = Transform3D(0.17473, 0, 0.047689, 0, 0.33997, 0, -0.046094, 0, 0.180777, 0.280908, 0.168333, -0.350199)
+mesh = SubResource("PrismMesh_1o5cg")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Spikes" index="1"]
+transform = Transform3D(0.173549, 0, 0.052104, 0, 0.33997, 0, -0.0503614, 0, 0.179554, 0, 0.168333, -0.297137)
+mesh = SubResource("PrismMesh_1o5cg")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Spikes" index="2"]
+transform = Transform3D(0.17711, 0, 0.0371205, 0, 0.33997, 0, -0.035879, 0, 0.183239, -0.221765, 0.168333, -0.37308)
+mesh = SubResource("PrismMesh_1o5cg")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Spikes" index="3"]
+transform = Transform3D(0.180708, 0, 0, 0, 0.33997, 0, 0, 0, 0.186961, 0.3984, 0.168333, 0.208411)
+mesh = SubResource("PrismMesh_1o5cg")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Spikes" index="4"]
+transform = Transform3D(0.173681, 0, -0.0516307, 0, 0.33997, 0, 0.0499039, 0, 0.179691, -0.0424682, 0.168333, 0.137285)
+mesh = SubResource("PrismMesh_1o5cg")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Spikes" index="5"]
+transform = Transform3D(0.172119, 0, -0.0569542, 0, 0.33997, 0, 0.0550494, 0, 0.178075, -0.404467, 0.168333, 0.117138)
+mesh = SubResource("PrismMesh_1o5cg")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Spikes" index="6"]
+transform = Transform3D(0.180708, 0, 0, 0, 0.33997, 0, 0, 0, 0.186961, 0.3984, 0.168333, -0.107217)
+mesh = SubResource("PrismMesh_1o5cg")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Spikes" index="7"]
+transform = Transform3D(0.174771, 0, 0.0475281, 0, 0.33997, 0, -0.0459385, 0, 0.180819, 0.164344, 0.168333, -0.0764295)
+mesh = SubResource("PrismMesh_1o5cg")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="Spikes" index="8"]
+transform = Transform3D(0.161327, 0, 0.0842353, 0, 0.33997, 0, -0.0814181, 0, 0.16691, -0.404467, 0.168333, -0.207582)
+mesh = SubResource("PrismMesh_1o5cg")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D19" type="MeshInstance3D" parent="Spikes" index="9"]
+transform = Transform3D(0.164995, 0, 0.0762525, 0, 0.33997, 0, -0.0737022, 0, 0.170704, -0.197879, 0.168333, -0.107217)
+mesh = SubResource("PrismMesh_1o5cg")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D22" type="MeshInstance3D" parent="Spikes" index="10"]
+transform = Transform3D(0.177638, 0, 0.034318, 0, 0.33997, 0, -0.0331702, 0, 0.183784, 0.162084, 0.168333, 0.296179)
+mesh = SubResource("PrismMesh_1o5cg")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D25" type="MeshInstance3D" parent="Spikes" index="11"]
+transform = Transform3D(0.163972, 0, -0.0785781, 0, 0.33997, 0, 0.0759501, 0, 0.169646, -0.248557, 0.168333, 0.317492)
+mesh = SubResource("PrismMesh_1o5cg")
+skeleton = NodePath("../..")
