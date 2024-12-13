@@ -5,7 +5,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_li7xi"]
 size = Vector3(1, 0.001, 1)
 
-[node name="Node3D" type="Node3D"]
+[node name="Origin" type="Marker3D"]
 
 [node name="DeathPlane" type="Area3D" parent="." groups=["trap"]]
 script = ExtResource("1_k3yat")
