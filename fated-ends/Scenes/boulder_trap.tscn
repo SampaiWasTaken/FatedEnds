@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://brl6wp7kn66xq"]
+[gd_scene load_steps=6 format=3 uid="uid://cekynipqs7un6"]
 
 [ext_resource type="Texture2D" uid="uid://8e1xtpgexm2y" path="res://Assets/100_1374_seamless.jpg" id="2_4kqip"]
 [ext_resource type="Script" path="res://Scripts/boulder_trap.gd" id="2_q1yv6"]
@@ -14,19 +14,15 @@ material = SubResource("StandardMaterial3D_418b0")
 radial_segments = 7
 rings = 4
 
-[node name="Node3D" type="Node3D"]
-
-[node name="RigidBody3D" type="RigidBody3D" parent="." groups=["trap"]]
-collision_layer = 4
-collision_mask = 7
-mass = 100.0
+[node name="Node3D" type="RigidBody3D" groups=["trap"]]
+mass = 1000.0
 script = ExtResource("2_q1yv6")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_xrqq7")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_4u8hn")
 skeleton = NodePath("")
 
-[connection signal="body_entered" from="RigidBody3D" to="RigidBody3D" method="_on_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
