@@ -10,7 +10,7 @@ var playerhealth = 100
 @onready var cam = $Camera3D
 
 var CamRotation = Vector2(0,0)
-var MouseSens = 0.001
+var MouseSens = 0.007
 
 func _ready() -> void:
 	cam.current = true

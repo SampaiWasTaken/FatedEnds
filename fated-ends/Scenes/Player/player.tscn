@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dncv1j7hufsuy"]
+[gd_scene load_steps=6 format=3 uid="uid://dncv1j7hufsuy"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_8j31w"]
+[ext_resource type="Script" path="res://Scenes/Player/ray_cast_3d.gd" id="2_vbmdb"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66i5h"]
 
@@ -28,6 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.599, 0)
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
 target_position = Vector3(0, 0, -20)
 collision_mask = 3
+script = ExtResource("2_vbmdb")
 
 [node name="InteractLabel" type="Label" parent="Camera3D/RayCast3D"]
 anchors_preset = -1
