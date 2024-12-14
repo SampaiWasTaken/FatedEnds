@@ -11,9 +11,13 @@ func _ready() -> void:
 @onready var interactlabel = $InteractLabel
 func _process(delta: float) -> void:
 	if is_colliding():
-		#print("colliding"+str(test))
-		interactlabel.text = str(get_collider())
-		#test+=1
+		var detected = get_collider()
+		if detected is Interactable:
+			interactlabel.text= detected.get_prompt()
+			if Input.is_action_just_pressed(detected.promt_action):
+				detected.interact(owner)
+		else:
+			interactlabel.text= ""
 	else:
 		interactlabel.text= ""
 	pass

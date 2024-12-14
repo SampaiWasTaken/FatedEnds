@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://dwckh7oj2njh0"]
+
+[ext_resource type="Script" path="res://Scenes/interactable/interactable.gd" id="1_yyktq"]
+[ext_resource type="Texture2D" uid="uid://csoafhma23tmy" path="res://Scenes/textures/wood1.png" id="2_83j7l"]
+[ext_resource type="Script" path="res://Scenes/interactable/leverAnimation.gd" id="2_bgx6c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qaf2"]
+albedo_texture = ExtResource("2_83j7l")
+
+[sub_resource type="BoxMesh" id="BoxMesh_les54"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7qu2m"]
+
+[sub_resource type="Animation" id="Animation_dkixf"]
+resource_name = "pull"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.785398, 0, 0), Vector3(0.785398, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c8ekg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.828368, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w81ds"]
+_data = {
+"RESET": SubResource("Animation_c8ekg"),
+"pull": SubResource("Animation_dkixf")
+}
+
+[node name="Lever" type="StaticBody3D"]
+script = ExtResource("1_yyktq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.2, 0, 0, 0, 0.818056, 0.147366, 0, -0.891563, 0.135216, 0, -0.128848, 0)
+material_override = SubResource("StandardMaterial3D_5qaf2")
+mesh = SubResource("BoxMesh_les54")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7qu2m")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w81ds")
+}
+script = ExtResource("2_bgx6c")
+
+[connection signal="interacted" from="." to="AnimationPlayer" method="_on_lever_interacted"]
