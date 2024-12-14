@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dncv1j7hufsuy"]
+[gd_scene load_steps=15 format=3 uid="uid://dncv1j7hufsuy"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_8j31w"]
 [ext_resource type="Script" path="res://Scenes/Player/ray_cast_3d.gd" id="2_vbmdb"]
 [ext_resource type="AudioStream" uid="uid://dgxkhvnfkojg3" path="res://Assets/sounds/sfx/step2_reverb.wav" id="3_cuyks"]
 [ext_resource type="PackedScene" path="res://Scenes/Player/arm.tscn" id="3_ol706"]
+[ext_resource type="FontFile" uid="uid://c4ugdy6ujc4b5" path="res://Assets/Retro Gaming.ttf" id="3_qbgqo"]
 [ext_resource type="PackedScene" uid="uid://l8innwbqkeo2" path="res://resources/sword/low_poly_sword_003.tscn" id="4_f75tn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66i5h"]
@@ -284,6 +285,8 @@ offset_left = 3.0
 offset_top = -0.112015
 offset_right = -0.456055
 offset_bottom = -0.200012
+theme_override_fonts/font = ExtResource("3_qbgqo")
+theme_override_font_sizes/font_size = 10
 horizontal_alignment = 1
 vertical_alignment = 1
 
