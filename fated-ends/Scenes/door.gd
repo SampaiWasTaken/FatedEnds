@@ -25,6 +25,6 @@ func door_activated(door_id: int):
 	
 func door_deactivated(door_id: int):
 	if door_id == self.door_id:
-		
+		open=false
 		$AnimationPlayer.play("close")
 		set_deferred("$Armature/Skeleton3D/WoodenDoor/Area3D/CollisionShape3D.disabled", false)

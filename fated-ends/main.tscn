@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dffai7cb8sehi"]
+[gd_scene load_steps=23 format=3 uid="uid://dffai7cb8sehi"]
 
 [ext_resource type="PackedScene" uid="uid://dncv1j7hufsuy" path="res://Scenes/Player/player.tscn" id="1_4axfq"]
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
@@ -204,6 +204,7 @@ door_id = 1
 
 [node name="Lever" parent="." instance=ExtResource("15_5ello")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7427, 0.0307594, -3.24139)
+
 [node name="BGLoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_f1ycn")
 autoplay = true

@@ -118,4 +118,7 @@ func _process(delta: float) -> void:
 		cam.position.y = cam_init_pos
 		
 func is_walking() -> bool:
-	return !velocity.is_equal_approx(Vector3.ZERO)  # Example check for movement
+	if is_on_floor():
+		return !velocity.is_equal_approx(Vector3.ZERO)  # Example check for movement
+	else:
+		return false
