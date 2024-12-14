@@ -1,7 +1,7 @@
 extends Node
 
 @export var text_label: RichTextLabel
-@export var reveal_speed: float = 0.05
+@export var reveal_speed: float = 0.07
 @export var game_scene: PackedScene # Reference to the game scene
 
 var full_text: String = """
@@ -31,8 +31,11 @@ Yet the silence is deceptive, and the world itself seems to bend, unwilling to l
 
 
 Use WASD to walk.
-Use E to interact with objects.
+
+Use E (e, this is super hard to read) to interact with objects.
+
 Use Left Click to tempt [color=red]fate[/color].
+
 """
 
 var processed_text: Array = []

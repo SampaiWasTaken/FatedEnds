@@ -111,7 +111,7 @@ corpse_scene = ExtResource("5_l8je5")
 
 [node name="TimerManager" type="Node" parent="."]
 script = ExtResource("5_luvpe")
-timer_duration = 400.0
+timer_duration = 12.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
