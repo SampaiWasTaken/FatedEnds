@@ -1,0 +1,74 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqikjbstss5mh"]
+
+[ext_resource type="PackedScene" uid="uid://dkw8ddv7euer1" path="res://Scenes/moveable_crate.tscn" id="1_2ahdt"]
+
+[node name="cratesPuzzleHint" type="Node3D"]
+
+[node name="moveable_crate3" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11528, 0, 0)
+
+[node name="moveable_crate4" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23059, 0, 0)
+
+[node name="moveable_crate5" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36243, 0, 0)
+
+[node name="moveable_crate6" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50029, 0, 0)
+
+[node name="moveable_crate11" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50029, 0, -1.12798)
+
+[node name="moveable_crate13" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.29722)
+
+[node name="moveable_crate14" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11528, 0, -2.29722)
+
+[node name="moveable_crate15" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23059, 0, -2.29722)
+
+[node name="moveable_crate17" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50029, 0, -2.29722)
+
+[node name="moveable_crate19" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.4252)
+
+[node name="moveable_crate20" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11528, 0, -3.4252)
+
+[node name="moveable_crate21" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23059, 0, -3.4252)
+
+[node name="moveable_crate23" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50029, 0, -3.4252)
+
+[node name="moveable_crate26" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11528, 0, -4.55348)
+
+[node name="moveable_crate28" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0356584, 0, -4.55348)
+
+[node name="moveable_crate27" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23059, 0, -4.55348)
+
+[node name="moveable_crate29" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50029, 0, -4.55348)
+
+[node name="moveable_crate31" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.68146)
+
+[node name="moveable_crate35" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50029, 0, -5.68146)
+
+[node name="moveable_crate39" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23059, 0, -6.8507)
+
+[node name="moveable_crate40" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.36243, 0, -6.8507)
+
+[node name="moveable_crate41" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50029, 0, -6.8507)
+
+[node name="moveable_crate42" parent="." instance=ExtResource("1_2ahdt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.8507)
