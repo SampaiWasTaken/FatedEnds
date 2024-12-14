@@ -9,6 +9,7 @@ func _ready() -> void:
 
 
 func player_death_by_trap():
+	$"../DeathAudioPlayer".play()
 	$"../CanvasLayer/CanvasAnimPlayer".play("fade_black")
 	spawn_corpse()
 	reset_player_position()  
@@ -25,4 +26,5 @@ func spawn_corpse():
 
 
 func reset_player_position():
+	player.rotation = Vector3.ZERO
 	player.transform.origin = Vector3(0, 0, 0)  

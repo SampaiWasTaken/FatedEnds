@@ -8,7 +8,7 @@ var played = false
 
 func _ready():
 	timer_label = $"../CanvasLayer/DeathTimerLabel"  
-	$"../AudioStreamPlayer".connect("finished", audio_finished)
+	$"../BellPlayer".connect("finished", audio_finished)
 	timer_label.text = str(timer_duration)
 
 func _process(delta):
@@ -19,8 +19,8 @@ func _process(delta):
 		if not playingAudio and not played:
 			playingAudio = true
 			played = true
-			$"../AudioStreamPlayer".volume_db = -15
-			$"../AudioStreamPlayer".play()
+			$"../BellPlayer".volume_db = -15
+			$"../BellPlayer".play()
 		timer_label.set("theme_override_colors/font_color", Color.RED) 
 	else:
 		timer_label.set("theme_override_colors/font_color", Color.WHITE) 
