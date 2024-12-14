@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://03mghejjc4g8" path="res://Scenes/pressurePlate.tscn" id="13_emuuf"]
 [ext_resource type="PackedScene" uid="uid://cwrr1q2b75w8y" path="res://Scenes/door.tscn" id="14_1hgjb"]
 [ext_resource type="PackedScene" uid="uid://dwckh7oj2njh0" path="res://Scenes/interactable/lever.tscn" id="15_5ello"]
+[ext_resource type="AudioStream" uid="uid://bj586ea8a43j2" path="res://Assets/sounds/Shadow's Embrace(1).mp3" id="15_f1ycn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -30,6 +31,7 @@ tonemap_mode = 2
 glow_enabled = true
 glow_normalized = true
 glow_blend_mode = 0
+volumetric_fog_enabled = true
 volumetric_fog_density = 0.1
 
 [sub_resource type="Animation" id="Animation_81gnw"]
@@ -101,13 +103,13 @@ corpse_scene = ExtResource("5_l8je5")
 
 [node name="TimerManager" type="Node" parent="."]
 script = ExtResource("5_luvpe")
-timer_duration = 60.0
+timer_duration = 400.0
 
 [node name="testBlock" parent="." instance=ExtResource("8_b6lgw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2346, 1.45796, 0)
 
-[node name="origin" parent="." instance=ExtResource("9_ddsrx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93795, 0, 2.34009)
+[node name="Spikes" parent="." instance=ExtResource("9_ddsrx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93795, 0, 1.10917)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_5xatb")
@@ -193,7 +195,7 @@ text = "You cannot escape
 vertical_alignment = 1
 
 [node name="pressurePlate" parent="." instance=ExtResource("13_emuuf")]
-transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 2, 2.91641, 0.0249998, -1.14277)
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 2, 1.53784, 0.0249998, 0.0750556)
 plate_nr = 1
 
 [node name="WoodenDoor2" parent="." instance=ExtResource("14_1hgjb")]
@@ -202,3 +204,6 @@ door_id = 1
 
 [node name="Lever" parent="." instance=ExtResource("15_5ello")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7427, 0.0307594, -3.24139)
+[node name="BGLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_f1ycn")
+autoplay = true

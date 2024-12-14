@@ -8,6 +8,7 @@ size = Vector3(1, 0.001, 1)
 [node name="Origin" type="Marker3D"]
 
 [node name="DeathPlane" type="Area3D" parent="." groups=["trap"]]
+collision_layer = 0
 script = ExtResource("1_k3yat")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathPlane"]

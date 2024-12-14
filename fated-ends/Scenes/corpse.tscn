@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b70b05uxo8n16"]
+
+[ext_resource type="PackedScene" uid="uid://dd6dpb8jwuad8" path="res://Scenes/dead_player.tscn" id="1_7wioo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hifu5"]
+size = Vector3(1, 0.586365, 2.28845)
+
+[node name="Node3D" type="RigidBody3D"]
+mass = 100000.0
+freeze = true
+
+[node name="Dying Backwards" parent="." instance=ExtResource("1_7wioo")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0191956, -1.24152)
+shape = SubResource("BoxShape3D_hifu5")
