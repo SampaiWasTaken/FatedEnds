@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dctyrjs2tq2f1"]
+
+[ext_resource type="PackedScene" uid="uid://bqrfv3wnld7xu" path="res://resources/crate.glb" id="1_7o02r"]
+
+[node name="crate" instance=ExtResource("1_7o02r")]

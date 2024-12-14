@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://qpi0nxp1s1j4"]
+
+[ext_resource type="PackedScene" uid="uid://dctyrjs2tq2f1" path="res://resources/crate.tscn" id="1_tdtcy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_frspe"]
+
+[node name="moveable_crate" type="RigidBody3D"]
+mass = 50.0
+
+[node name="crate" parent="." instance=ExtResource("1_tdtcy")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_frspe")

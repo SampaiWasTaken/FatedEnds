@@ -5,20 +5,24 @@ extends CharacterBody3D
 var wobble_timer: float = 0.0  
 var walking = false
 
+var sword_equiped = false
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const TURN_SPEED = 0.05
 
 var playerhealth = 100
 
-@onready var cam = $Camera3D
-@onready var cam_init_pos = cam.position.y
+@onready var cam = $CamContainer
+@onready var camw = $CamContainer/Camera3D
+@onready var cam_init_pos = camw.position.y
 
 var CamRotation = Vector2(0,0)
 var MouseSens = 0.007
 
 func _ready() -> void:
-	cam.current = true
+	$"CamContainer/arm/Low Poly Sword_003".visible = false
+	#cam.current = true
 	add_to_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -112,10 +116,10 @@ func _process(delta: float) -> void:
 	if is_walking():  # Ensure wobble only happens when moving
 		wobble_timer += delta * wobble_speed
 		var wobble_offset = sin(wobble_timer) * wobble_amount
-		cam.position.y = cam_init_pos + wobble_offset
+		camw.position.y = cam_init_pos + wobble_offset
 	else:
 		wobble_timer = 0.0  # Reset wobble when stationary
-		cam.position.y = cam_init_pos
+		camw.position.y = cam_init_pos
 		
 func is_walking() -> bool:
 	return !velocity.is_equal_approx(Vector3.ZERO)  # Example check for movement

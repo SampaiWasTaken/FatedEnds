@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://l8innwbqkeo2"]
+
+[ext_resource type="PackedScene" uid="uid://cp5wbch47vp4o" path="res://resources/sword/Low Poly Sword.003.fbx" id="1_falmf"]
+[ext_resource type="Texture2D" uid="uid://bc5jmxh660nxy" path="res://resources/sword/Sword.png" id="2_fb714"]
+[ext_resource type="Texture2D" uid="uid://dkmid1mtwkcih" path="res://resources/sword/Sword_metalness.png" id="3_r5wt8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vvqfe"]
+albedo_texture = ExtResource("2_fb714")
+metallic = 1.0
+metallic_texture = ExtResource("3_r5wt8")
+
+[node name="Low Poly Sword_003" instance=ExtResource("1_falmf")]
+
+[node name="Low Poly Sword_003" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_vvqfe")

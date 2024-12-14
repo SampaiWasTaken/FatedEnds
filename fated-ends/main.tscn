@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dffai7cb8sehi"]
+[gd_scene load_steps=26 format=3 uid="uid://dffai7cb8sehi"]
 
 [ext_resource type="PackedScene" uid="uid://dncv1j7hufsuy" path="res://Scenes/Player/player.tscn" id="1_4axfq"]
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://cwrr1q2b75w8y" path="res://Scenes/door.tscn" id="14_1hgjb"]
 [ext_resource type="PackedScene" uid="uid://dwckh7oj2njh0" path="res://Scenes/interactable/lever.tscn" id="15_5ello"]
 [ext_resource type="AudioStream" uid="uid://bj586ea8a43j2" path="res://Assets/sounds/Shadow's Embrace(1).mp3" id="15_f1ycn"]
+[ext_resource type="PackedScene" uid="uid://qpi0nxp1s1j4" path="res://Scenes/moveable_crate.tscn" id="17_8uckq"]
+[ext_resource type="PackedScene" uid="uid://l8innwbqkeo2" path="res://resources/sword/low_poly_sword_003.tscn" id="18_vyx66"]
+[ext_resource type="PackedScene" uid="uid://cvs17fs0yysbq" path="res://resources/sword/interactable_sword.tscn" id="19_oshxh"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -31,7 +34,6 @@ tonemap_mode = 2
 glow_enabled = true
 glow_normalized = true
 glow_blend_mode = 0
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.1
 
 [sub_resource type="Animation" id="Animation_81gnw"]
@@ -90,8 +92,11 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78081, 2.69867, 14.1243)
-light_energy = 16.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.58336, 2.97665, 1.90774)
+light_energy = 0.5
+shadow_enabled = true
+omni_range = 7.5
+omni_attenuation = 2.0
 
 [node name="Node3D" parent="." instance=ExtResource("3_h43rd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6491, 2.15774, -6.7238)
@@ -106,7 +111,7 @@ script = ExtResource("5_luvpe")
 timer_duration = 400.0
 
 [node name="testBlock" parent="." instance=ExtResource("8_b6lgw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2346, 1.45796, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2346, 0.733282, 0)
 
 [node name="Spikes" parent="." instance=ExtResource("9_ddsrx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93795, 0, 1.10917)
@@ -204,6 +209,16 @@ door_id = 1
 
 [node name="Lever" parent="." instance=ExtResource("15_5ello")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7427, 0.0307594, -3.24139)
+
 [node name="BGLoop" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("15_f1ycn")
 autoplay = true
+
+[node name="moveable_crate" parent="." instance=ExtResource("17_8uckq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9477, 1.32412, -2.58258)
+
+[node name="Low Poly Sword_003" parent="." instance=ExtResource("18_vyx66")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.68754, 1.405, 0)
+
+[node name="interactable_sword" parent="." instance=ExtResource("19_oshxh")]
+transform = Transform3D(2, 0, 0, 0, 0.0827747, 1.99829, 0, -1.99829, 0.0827747, -0.935615, 0.0652958, -5.29471)

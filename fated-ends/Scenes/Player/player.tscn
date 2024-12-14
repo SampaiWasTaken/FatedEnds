@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dncv1j7hufsuy"]
+[gd_scene load_steps=12 format=3 uid="uid://dncv1j7hufsuy"]
 
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_8j31w"]
 [ext_resource type="Script" path="res://Scenes/Player/ray_cast_3d.gd" id="2_vbmdb"]
+[ext_resource type="PackedScene" uid="uid://cdeb3whaeut3h" path="res://Scenes/Player/arm.tscn" id="3_ol706"]
+[ext_resource type="PackedScene" uid="uid://l8innwbqkeo2" path="res://resources/sword/low_poly_sword_003.tscn" id="4_f75tn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66i5h"]
 
@@ -9,6 +11,178 @@
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_g1m4w"]
 points = PackedVector3Array(-0.125207, -0.532801, -0.480507, 0.0227831, 0.47607, 0.498884, 0.169713, 0.559144, 0.464172, 0.231051, -0.803591, 0.320455, 0.40741, 0.651043, -0.243523, -0.482789, 0.594843, 0.0822132, -0.362868, -0.682312, 0.289697, 0.469044, -0.654529, -0.0662713, -0.127444, 0.842701, -0.338103, -0.393435, -0.683942, -0.244717, 0.438255, 0.623309, 0.200849, 0.0841477, 0.977454, 0.114795, -0.0682023, -0.976458, -0.12927, 0.20055, -0.563129, -0.451454, -0.185527, 0.595453, -0.453475, -0.273363, 0.592268, 0.407754, -0.00693649, -0.476823, 0.49966, 0.375821, -0.588614, 0.316955, 0.111579, 0.563059, -0.481177, -0.41725, 0.527866, -0.270497, -0.484546, -0.596972, -0.0665097, -0.279747, 0.908561, 0.0533361, -0.250197, -0.880712, 0.205319, 0.263647, -0.902771, -0.127394, 0.293368, 0.871526, -0.157196, 0.373412, -0.526319, -0.328246, 0.499663, 0.476641, -0.00688856, 0.0531056, 0.875001, 0.324703, -0.154543, -0.590854, 0.465879, -0.0972799, -0.782358, -0.398188, -0.387649, -0.498171, 0.31565, -0.30068, -0.587995, -0.388901)
+
+[sub_resource type="Animation" id="Animation_iux5b"]
+resource_name = "equipSword"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(5.46416, 1, 0.183011),
+"update": 0,
+"values": [Vector3(-1.25784, -1.71068, -2.61976), Vector3(-0.276027, -2.81972, -1.2862), Vector3(-1.25784, -1.71068, -2.61976)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("arm/Low Poly Sword_003:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("arm/Low Poly Sword_003:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.563093, -0.041045, 0.22406)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("arm/Low Poly Sword_003:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.223494, -1.65754, -1.23218)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("arm/Low Poly Sword_003:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_m7x4w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.25784, -1.71068, -2.61976)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("arm/Low Poly Sword_003:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("arm/Low Poly Sword_003:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.119295, -0.296819, 0.696496)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("arm/Low Poly Sword_003:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.388279, -1.61719, -1.62382)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("arm:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.04528, -0.88308, -0.635264)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("arm/Low Poly Sword_003:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_yl6un"]
+resource_name = "interact"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("arm:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.482968, 0.435275, 1.86607),
+"update": 0,
+"values": [Vector3(1.04528, -0.88308, -0.635264), Vector3(1.04528, -0.88308, -1.24546), Vector3(1.04528, -0.88308, -0.635264)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("arm:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1),
+"transitions": PackedFloat32Array(0.554785, 0.637281, 2.46229),
+"update": 0,
+"values": [Vector3(5.06145, 4.53786, 3.66519), Vector3(5.41052, 5.06145, 2.4487), Vector3(5.06145, 4.53786, 3.66519)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dr8ex"]
+_data = {
+"RESET": SubResource("Animation_m7x4w"),
+"equipSword": SubResource("Animation_iux5b"),
+"interact": SubResource("Animation_yl6un")
+}
 
 [node name="player" type="CharacterBody3D"]
 collision_layer = 2
@@ -24,15 +198,17 @@ mesh = SubResource("CapsuleMesh_nwwg0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("ConvexPolygonShape3D_g1m4w")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.599, 0)
+[node name="CamContainer" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 
-[node name="RayCast3D" type="RayCast3D" parent="Camera3D"]
+[node name="Camera3D" type="Camera3D" parent="CamContainer"]
+
+[node name="RayCast3D" type="RayCast3D" parent="CamContainer/Camera3D"]
 target_position = Vector3(0, 0, -20)
 collision_mask = 3
 script = ExtResource("2_vbmdb")
 
-[node name="InteractLabel" type="Label" parent="Camera3D/RayCast3D"]
+[node name="InteractLabel" type="Label" parent="CamContainer/Camera3D/RayCast3D"]
 anchors_preset = -1
 anchor_top = 0.369
 anchor_right = 1.003
@@ -43,6 +219,17 @@ offset_right = -0.456055
 offset_bottom = -0.200012
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="arm" parent="CamContainer" instance=ExtResource("3_ol706")]
+transform = Transform3D(-0.348748, -0.886244, -0.30487, -0.153467, -0.266901, 0.951426, -0.924566, 0.378596, -0.0429282, 1.04528, -0.88308, -0.635264)
+
+[node name="Low Poly Sword_003" parent="CamContainer/arm" instance=ExtResource("4_f75tn")]
+transform = Transform3D(-0.375199, -0.0663602, -0.924567, -0.924262, -0.0490563, 0.378596, -0.0704795, 0.996589, -0.0429283, 0.119295, -0.296819, 0.696496)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CamContainer"]
+libraries = {
+"": SubResource("AnimationLibrary_dr8ex")
+}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -21.29
