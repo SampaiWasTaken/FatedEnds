@@ -9,7 +9,6 @@ normal_texture = ExtResource("2_guko0")
 uv1_offset = Vector3(-0.38, 0.36, -0.065)
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_utjm1"]
-load_path = "res://.godot/imported/crate1_1.png-9c51d578b43cc866d5e700d8043190ad.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_osxvr"]
 albedo_texture = SubResource("CompressedTexture2D_utjm1")

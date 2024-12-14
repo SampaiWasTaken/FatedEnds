@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_8j31w"]
 [ext_resource type="Script" path="res://Scenes/Player/ray_cast_3d.gd" id="2_vbmdb"]
 [ext_resource type="AudioStream" uid="uid://dgxkhvnfkojg3" path="res://Assets/sounds/sfx/step2_reverb.wav" id="3_cuyks"]
-[ext_resource type="PackedScene" uid="uid://cdeb3whaeut3h" path="res://Scenes/Player/arm.tscn" id="3_ol706"]
+[ext_resource type="PackedScene" path="res://Scenes/Player/arm.tscn" id="3_ol706"]
 [ext_resource type="PackedScene" uid="uid://l8innwbqkeo2" path="res://resources/sword/low_poly_sword_003.tscn" id="4_f75tn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66i5h"]
@@ -222,7 +222,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="arm" parent="CamContainer" instance=ExtResource("3_ol706")]
-transform = Transform3D(-0.348754, -0.886243, -0.304865, -0.153465, -0.266897, 0.951428, -0.924564, 0.378601, -0.042926, 1.04528, -0.88308, -0.635264)
+transform = Transform3D(-0.348754, -0.886243, -0.304866, -0.153465, -0.266897, 0.951428, -0.924564, 0.378601, -0.0429261, 1.04528, -0.88308, -0.635264)
 
 [node name="Low Poly Sword_003" parent="CamContainer/arm" instance=ExtResource("4_f75tn")]
 transform = Transform3D(-0.375199, -0.0663554, -0.924566, -0.924261, -0.0490537, 0.378596, -0.0704752, 0.99659, -0.0429248, 0.119295, -0.296819, 0.696496)
