@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b31166h01cxd8" path="res://Scenes/textures/Claimedwall2B.png" id="1_iohcx"]
 [ext_resource type="Texture2D" uid="uid://cyrpwlt11xclv" path="res://Scenes/textures/Claimedwall2_nor3.png" id="2_sc47p"]
 [ext_resource type="Script" path="res://unsafe_path.gd" id="3_vhcbm"]
-[ext_resource type="PackedScene" uid="uid://c5m6ffrrtach5" path="res://Scenes/trap.tscn" id="4_srj1v"]
+[ext_resource type="PackedScene" uid="uid://da1lcj6udnmwb" path="res://mazeTrapSpike.tscn" id="4_f6f1t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8nep"]
 albedo_texture = ExtResource("1_iohcx")
@@ -143,7 +143,7 @@ shape = SubResource("BoxShape3D_uggfr")
 script = ExtResource("3_vhcbm")
 
 [node name="MeshInstance72" type="MeshInstance3D" parent="UnsafePath"]
-transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, 3.3, 0, 1.1)
+transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, 3.29954, -1.19209e-07, 1.05922)
 mesh = SubResource("BoxMesh_huwgs")
 skeleton = NodePath("../..")
 
@@ -152,8 +152,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance72/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance72" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance72" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, 0, 0, -2.2)
@@ -165,8 +165,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, 0, 0, 0)
@@ -178,8 +178,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D3/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D3" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D3" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, 0, 0, 1.1)
@@ -191,8 +191,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D5/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D5" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D5" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, 0, 0, 2.2)
@@ -204,8 +204,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D6/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D6" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D6" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, 1.1, 0, -2.2)
@@ -217,8 +217,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D2/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D2" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D2" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, 1.1, 0, 0)
@@ -230,8 +230,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D7/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D7" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D7" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, 1.1, 0, 1.1)
@@ -243,8 +243,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D9/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D9" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D9" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, 1.1, 0, 2.2)
@@ -256,8 +256,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D10/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D10" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D10" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, -1.1, 0, -2.2)
@@ -269,8 +269,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D11/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D11" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D11" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, -1.1, 0, 0)
@@ -282,8 +282,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D12/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D12" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D12" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, -1.1, 0, 1.1)
@@ -295,8 +295,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D14/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D14" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D14" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D15" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, -1.1, 0, 2.2)
@@ -308,8 +308,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D15/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D15" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D15" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, 2.2, 0, -2.2)
@@ -321,8 +321,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D16/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D16" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D16" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D21" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, -2.2, 0, -2.2)
@@ -334,8 +334,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D21/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D21" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D21" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance3D25" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, -2.2, 0, 2.2)
@@ -347,8 +347,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance3D25/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance3D25" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance3D25" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance75" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, 3.3, 0, -2.2)
@@ -360,8 +360,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance75/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance75" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance75" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance74" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, 3.3, 0, -1.1)
@@ -373,8 +373,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance74/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance74" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance74" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance73" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, 3.3, 0, 0)
@@ -386,8 +386,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance73/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance73" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance73" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance15" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, -3.3, 0, -2.2)
@@ -399,8 +399,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance15/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance15" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance15" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance14" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, -3.3, 0, -1.1)
@@ -412,8 +412,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance14/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance14" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance14" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance13" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, -3.3, 0, 0)
@@ -425,8 +425,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance13/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance13" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance13" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
 
 [node name="MeshInstance11" type="MeshInstance3D" parent="UnsafePath"]
 transform = Transform3D(1, 0, 0, 0, 0.0629141, 0, 0, 0, 1, -3.3, 0, 2.2)
@@ -438,5 +438,5 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="UnsafePath/MeshInstance11/StaticBody3D"]
 shape = SubResource("BoxShape3D_uggfr")
 
-[node name="Origin" parent="UnsafePath/MeshInstance11" instance=ExtResource("4_srj1v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0888, 0)
+[node name="Origin" parent="UnsafePath/MeshInstance11" instance=ExtResource("4_f6f1t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25622, 0)
