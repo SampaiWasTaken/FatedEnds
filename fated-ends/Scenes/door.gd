@@ -27,6 +27,14 @@ func door_activated(door_id: int):
 		open = true
 		$AnimationPlayer.play("open")
 		set_deferred("$Armature/Skeleton3D/WoodenDoor/Area3D/CollisionShape3D.disabled", true)
+
+func door_destroy(door_id: int):
+	if door_id == self.door_id:
+		if not playingAudio:
+			$AudioStreamPlayer3D.play()
+		open = true
+		$AnimationPlayer.play("destroy")
+		set_deferred("$Armature/Skeleton3D/WoodenDoor/Area3D/CollisionShape3D.disabled", true)
 	
 func door_deactivated(door_id: int):
 	if door_id == self.door_id:
