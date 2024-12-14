@@ -1,5 +1,9 @@
 extends CharacterBody3D
 
+@export var wobble_amount: float = 0.1
+@export var wobble_speed: float = 10.0 
+var wobble_timer: float = 0.0  
+var walking = false
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -8,6 +12,7 @@ const TURN_SPEED = 0.05
 var playerhealth = 100
 
 @onready var cam = $Camera3D
+@onready var cam_init_pos = cam.position.y
 
 var CamRotation = Vector2(0,0)
 var MouseSens = 0.007
@@ -102,3 +107,15 @@ func _push_away_rigid_bodies():
 
 func _on_ui_shooting() -> void:
 	pass # Replace with function body.
+
+func _process(delta: float) -> void:
+	if is_walking():  # Ensure wobble only happens when moving
+		wobble_timer += delta * wobble_speed
+		var wobble_offset = sin(wobble_timer) * wobble_amount
+		cam.position.y = cam_init_pos + wobble_offset
+	else:
+		wobble_timer = 0.0  # Reset wobble when stationary
+		cam.position.y = cam_init_pos
+		
+func is_walking() -> bool:
+	return !velocity.is_equal_approx(Vector3.ZERO)  # Example check for movement

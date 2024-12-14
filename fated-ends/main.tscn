@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dffai7cb8sehi"]
+[gd_scene load_steps=17 format=3 uid="uid://dffai7cb8sehi"]
 
 [ext_resource type="PackedScene" uid="uid://dncv1j7hufsuy" path="res://Scenes/Player/player.tscn" id="1_4axfq"]
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
@@ -27,6 +27,43 @@ glow_normalized = true
 glow_blend_mode = 0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.1
+
+[sub_resource type="Animation" id="Animation_1bcv6"]
+resource_name = "fade_black"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 0.517633),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_81gnw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.0333333),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fitsp"]
+_data = {
+"RESET": SubResource("Animation_81gnw"),
+"fade_black": SubResource("Animation_1bcv6")
+}
 
 [node name="Node3D" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0183811, 2.38419e-07, 0.00449753)
@@ -62,6 +99,16 @@ corpse_scene = ExtResource("5_ltf40")
 script = ExtResource("5_luvpe")
 timer_duration = 12.0
 
+[node name="testBlock" parent="." instance=ExtResource("8_b6lgw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2346, 1.45796, 0)
+
+[node name="origin" parent="." instance=ExtResource("9_ddsrx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93795, 0, 2.34009)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_5xatb")
+volume_db = -5.0
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="DeathTimerLabel" type="Label" parent="CanvasLayer"]
@@ -71,11 +118,15 @@ theme_override_fonts/font = ExtResource("7_j53xk")
 theme_override_font_sizes/font_size = 20
 text = "asd"
 
-[node name="testBlock" parent="." instance=ExtResource("8_b6lgw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2346, 1.45796, 0)
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
 
-[node name="origin" parent="." instance=ExtResource("9_ddsrx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93795, 0, 2.34009)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("10_5xatb")
+[node name="CanvasAnimPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_fitsp")
+}

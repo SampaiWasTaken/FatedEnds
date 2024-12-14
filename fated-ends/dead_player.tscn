@@ -39,6 +39,9 @@ bones/23/rotation = Quaternion(0.314836, 0.274705, -0.0957275, 0.903466)
 [node name="body" parent="Skeleton3D" index="0"]
 material_override = SubResource("StandardMaterial3D_layyc")
 
+[node name="AnimationPlayer" parent="." index="1"]
+speed_scale = 1.7
+
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
