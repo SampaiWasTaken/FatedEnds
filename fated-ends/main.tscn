@@ -16,9 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://dwckh7oj2njh0" path="res://Scenes/interactable/lever.tscn" id="15_5ello"]
 [ext_resource type="AudioStream" uid="uid://dvlnrds7aegeg" path="res://Assets/sounds/upside down grin2.ogg" id="16_mdjkr"]
 [ext_resource type="AudioStream" uid="uid://c14u1xioipsc5" path="res://Assets/sounds/sfx/death.wav" id="17_nves2"]
-[ext_resource type="PackedScene" uid="uid://cuxevnk4c6ns8" path="res://untitled.tscn" id="18_7t6wx"]
+[ext_resource type="PackedScene" path="res://untitled.tscn" id="18_7t6wx"]
 [ext_resource type="PackedScene" uid="uid://dkw8ddv7euer1" path="res://Scenes/moveable_crate.tscn" id="19_24ssg"]
-[ext_resource type="PackedScene" uid="uid://ddsdg58radnl6" path="res://Scenes/torch.tscn" id="19_qb56k"]
+[ext_resource type="PackedScene" path="res://Scenes/torch.tscn" id="19_qb56k"]
 [ext_resource type="PackedScene" uid="uid://cvs17fs0yysbq" path="res://resources/sword/interactable_sword.tscn" id="20_13jfc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
@@ -206,6 +206,9 @@ door_id = 1
 
 [node name="Lever" parent="." instance=ExtResource("15_5ello")]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91068e-15, 0.210008, 1.70754, -39.9823)
+
+[node name="MeshInstance3D" parent="Lever" index="0"]
+transform = Transform3D(0.2, 0, 0, 0, 0.818056, 0.147366, 0, -0.891563, 0.135216, 0, -0.128848, 0)
 
 [node name="doorOpener" parent="Lever" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0537992, 0.0126824, 0.033576)

@@ -37,7 +37,7 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		var MouseEvent = event.relative*MouseSens
 		CameraLook(MouseEvent)
-	if event.is_action_pressed("attack"):
+	if event.is_action_pressed("attack") and sword_equiped:
 		$CamContainer/AnimationPlayer.play("kys")
 
 # https://www.youtube.com/watch?v=O77xgrp5nOY used this tutorial for mouse movement
