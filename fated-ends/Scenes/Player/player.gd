@@ -2,6 +2,7 @@ extends CharacterBody3D
 
 @export var wobble_amount: float = 0.1
 @export var wobble_speed: float = 10.0 
+@export var sprint_wobble_speed: float = 20.0 
 var wobble_timer: float = 0.0  
 var walking = false
 
@@ -55,18 +56,18 @@ func _physics_process(delta: float) -> void:
 	#if Input.is_action_just_pressed("quit"):
 	#	$"../".exit_game(name.to_int())
 	#	get_tree().quit()
-
-
+	
+	var currSpeed = SPEED * 2 if is_sprinting() else SPEED
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * currSpeed
+		velocity.z = direction.z * currSpeed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, currSpeed)
+		velocity.z = move_toward(velocity.z, 0, currSpeed)
 	#if Input.is_action_pressed("ui_left"):
 		#self.rotate_y(TURN_SPEED)
 		#self.rotation.y = self.rotation.y + TURN_SPEED
@@ -112,12 +113,15 @@ func _on_ui_shooting() -> void:
 
 func _process(delta: float) -> void:
 	if is_walking():  
-		wobble_timer += delta * wobble_speed
+		wobble_timer += delta * (sprint_wobble_speed if is_sprinting() else wobble_speed)
 		var wobble_offset = sin(wobble_timer) * wobble_amount
 		cam.position.y = cam_init_pos + wobble_offset
 		#$AudioStreamPlayer.autoplay = true
-		if not playingAudio:
+		if not is_sprinting():
 			$AudioStreamPlayer.pitch_scale = 0.5
+		else:
+			$AudioStreamPlayer.pitch_scale = 1
+		if not playingAudio:
 			$AudioStreamPlayer.volume_db = -5
 			$AudioStreamPlayer.play()
 		playingAudio = true
@@ -133,3 +137,6 @@ func is_walking() -> bool:
 		  # Example check for movement
 	else:
 		return false
+
+func is_sprinting() -> bool:
+	return Input.is_action_pressed("sprint")
