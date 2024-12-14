@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_body_entered(body: Node3D) -> void:
+	print(body)
 	if body.is_in_group("player"):
 		emit_signal("player_death")
 		print("test 123 du bist tot")

@@ -8,8 +8,12 @@ func _ready() -> void:
 		trap.connect("player_death", player_death_by_trap)
 
 
+func _process(delta: float) -> void:
+	if player.position.y <= -20:
+		player_death_by_trap()
+
 func player_death_by_trap():
-	$"../DeathAudioPlayer".play()
+	$"../AudioPlayers/DeathAudioPlayer".play()
 	$"../CanvasLayer/CanvasAnimPlayer".play("fade_black")
 	spawn_corpse()
 	reset_player_position()  
