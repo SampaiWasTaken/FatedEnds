@@ -71,6 +71,7 @@ _data = {
 [node name="interactable_sword" type="StaticBody3D"]
 script = ExtResource("1_lui3f")
 promt_message = "Pick up sword"
+animation_action = "equipSword"
 
 [node name="Low Poly Sword_003" parent="." instance=ExtResource("1_cu505")]
 

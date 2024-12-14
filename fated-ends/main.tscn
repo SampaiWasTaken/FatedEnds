@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dffai7cb8sehi"]
+[gd_scene load_steps=27 format=3 uid="uid://dffai7cb8sehi"]
 
 [ext_resource type="PackedScene" uid="uid://dncv1j7hufsuy" path="res://Scenes/Player/player.tscn" id="1_4axfq"]
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
@@ -17,8 +17,9 @@
 [ext_resource type="PackedScene" uid="uid://dwckh7oj2njh0" path="res://Scenes/interactable/lever.tscn" id="15_5ello"]
 [ext_resource type="AudioStream" uid="uid://dvlnrds7aegeg" path="res://Assets/sounds/upside down grin2.ogg" id="16_mdjkr"]
 [ext_resource type="AudioStream" uid="uid://c14u1xioipsc5" path="res://Assets/sounds/sfx/death.wav" id="17_nves2"]
-[ext_resource type="PackedScene" uid="uid://cuxevnk4c6ns8" path="res://untitled.tscn" id="18_7t6wx"]
-[ext_resource type="PackedScene" uid="uid://ddsdg58radnl6" path="res://Scenes/torch.tscn" id="19_qb56k"]
+[ext_resource type="PackedScene" path="res://untitled.tscn" id="18_7t6wx"]
+[ext_resource type="PackedScene" path="res://Scenes/torch.tscn" id="19_qb56k"]
+[ext_resource type="PackedScene" uid="uid://cvs17fs0yysbq" path="res://resources/sword/interactable_sword.tscn" id="20_13jfc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -250,3 +251,8 @@ transform = Transform3D(-0.0393616, 0.345545, 0.114123, -3.20841e-09, 0.708735, 
 
 [node name="Torch4" parent="." instance=ExtResource("19_qb56k")]
 transform = Transform3D(-0.00280058, 0.632556, 0.0797965, 0.0013715, 0.479383, -0.105329, -0.154539, -0.0072089, -0.00238086, 0.267092, 3.87938, -40.0054)
+
+[node name="interactable_sword" parent="." instance=ExtResource("20_13jfc")]
+transform = Transform3D(1.5, 0, 0, 0, -6.55671e-08, 1.5, 0, -1.5, -6.55671e-08, 0, 0.0858382, -3)
+
+[connection signal="interacted" from="interactable_sword" to="player" method="_on_interactable_sword_interacted"]

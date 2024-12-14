@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 			interactlabel.text= detected.get_prompt()
 			if Input.is_action_just_pressed(detected.promt_action):
 				detected.interact(owner)
-				$"../../AnimationPlayer".play("interact")
+				$"../../AnimationPlayer".play(detected.animation_action)
 		else:
 			interactlabel.text= ""
 	else:

@@ -5,6 +5,7 @@ signal interacted(body)
 
 @export var promt_message = "Interact"
 @export var promt_action = "interact"
+@export var animation_action = "interact"
 
 func get_prompt():
 	var key_name = ""
