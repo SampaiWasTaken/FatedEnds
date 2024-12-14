@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmfagn44rstto"
-path.s3tc="res://.godot/imported/Claimedwall2_nor3.png-fa6619d6a8558a21046414850b70819a.s3tc.ctex"
+uid="uid://cudrw1ej0k3jm"
+path.s3tc="res://.godot/imported/untitled_ground_03_n.png-e2cf31b18076c9a8eda011eaf77df5be.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "9f2860ade25bdfac326ee97f73d4c936"
+}
 
 [deps]
 
-source_file="res://Assets/Textures/textures/Claimedwall2_nor3.png"
-dest_files=["res://.godot/imported/Claimedwall2_nor3.png-fa6619d6a8558a21046414850b70819a.s3tc.ctex"]
+source_file="res://Assets/untitled_ground_03_n.png"
+dest_files=["res://.godot/imported/untitled_ground_03_n.png-e2cf31b18076c9a8eda011eaf77df5be.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Assets/untitled_ground_03_n.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

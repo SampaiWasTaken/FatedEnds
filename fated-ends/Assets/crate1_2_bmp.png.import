@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmfagn44rstto"
-path.s3tc="res://.godot/imported/Claimedwall2_nor3.png-fa6619d6a8558a21046414850b70819a.s3tc.ctex"
+uid="uid://ivdiurn0f03i"
+path.s3tc="res://.godot/imported/crate1_2_bmp.png-aedbdf50049c5541c0e103a1bcdbe0af.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/textures/Claimedwall2_nor3.png"
-dest_files=["res://.godot/imported/Claimedwall2_nor3.png-fa6619d6a8558a21046414850b70819a.s3tc.ctex"]
+source_file="res://Assets/crate1_2_bmp.png"
+dest_files=["res://.godot/imported/crate1_2_bmp.png-aedbdf50049c5541c0e103a1bcdbe0af.s3tc.ctex"]
 
 [params]
 
@@ -20,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Assets/crate1_2_bmp.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmfagn44rstto"
-path.s3tc="res://.godot/imported/Claimedwall2_nor3.png-fa6619d6a8558a21046414850b70819a.s3tc.ctex"
+uid="uid://d08tlgdo4h7kx"
+path.s3tc="res://.godot/imported/crate1_2.png-515fe36c9fe247f7a09f99c533fff090.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/textures/Claimedwall2_nor3.png"
-dest_files=["res://.godot/imported/Claimedwall2_nor3.png-fa6619d6a8558a21046414850b70819a.s3tc.ctex"]
+source_file="res://Assets/crate1_2.png"
+dest_files=["res://.godot/imported/crate1_2.png-515fe36c9fe247f7a09f99c533fff090.s3tc.ctex"]
 
 [params]
 

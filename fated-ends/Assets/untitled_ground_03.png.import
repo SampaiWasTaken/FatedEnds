@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmfagn44rstto"
-path.s3tc="res://.godot/imported/Claimedwall2_nor3.png-fa6619d6a8558a21046414850b70819a.s3tc.ctex"
+uid="uid://cyy5lfldijvs1"
+path.s3tc="res://.godot/imported/untitled_ground_03.png-cce1a90d099ddf16cf473a03ebc2756a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "6c6fc5a8df4a782c3b098fb39c4201b7"
+}
 
 [deps]
 
-source_file="res://Assets/Textures/textures/Claimedwall2_nor3.png"
-dest_files=["res://.godot/imported/Claimedwall2_nor3.png-fa6619d6a8558a21046414850b70819a.s3tc.ctex"]
+source_file="res://Assets/untitled_ground_03.png"
+dest_files=["res://.godot/imported/untitled_ground_03.png-cce1a90d099ddf16cf473a03ebc2756a.s3tc.ctex"]
 
 [params]
 
