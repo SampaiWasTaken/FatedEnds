@@ -15,6 +15,7 @@ radial_segments = 7
 rings = 4
 
 [node name="Node3D2" type="RigidBody3D" groups=["trap"]]
+collision_mask = 3
 mass = 1000.0
 script = ExtResource("2_q1yv6")
 

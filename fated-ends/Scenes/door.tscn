@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cwrr1q2b75w8y"]
+[gd_scene load_steps=7 format=3 uid="uid://cwrr1q2b75w8y"]
 
 [ext_resource type="PackedScene" uid="uid://d10qd8gv4044x" path="res://Assets/WoodenDoor.blend" id="1_p6wnu"]
 [ext_resource type="Script" path="res://Scenes/door.gd" id="2_22u5j"]
@@ -8,6 +8,9 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y73ky"]
 albedo_texture = ExtResource("2_w1vaw")
 roughness_texture = ExtResource("3_gm6pb")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y2ln8"]
+size = Vector3(1.1499, 1.22961, 0.226074)
 
 [node name="WoodenDoor2" instance=ExtResource("1_p6wnu")]
 script = ExtResource("2_22u5j")
@@ -19,3 +22,10 @@ bones/2/rotation = Quaternion(-0.689922, 0.689922, 0.154942, 0.154942)
 
 [node name="WoodenDoor" parent="Armature/Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_y73ky")
+
+[node name="Area3D" type="StaticBody3D" parent="Armature/Skeleton3D/WoodenDoor" index="0"]
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Armature/Skeleton3D/WoodenDoor/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00268555, 0.628967, -0.0111949)
+shape = SubResource("BoxShape3D_y2ln8")

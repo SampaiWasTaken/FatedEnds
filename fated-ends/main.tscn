@@ -100,13 +100,13 @@ corpse_scene = ExtResource("5_l8je5")
 
 [node name="TimerManager" type="Node" parent="."]
 script = ExtResource("5_luvpe")
-timer_duration = 12.0
+timer_duration = 400.0
 
 [node name="testBlock" parent="." instance=ExtResource("8_b6lgw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2346, 1.45796, 0)
 
-[node name="origin" parent="." instance=ExtResource("9_ddsrx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93795, 0, 2.34009)
+[node name="Spikes" parent="." instance=ExtResource("9_ddsrx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93795, 0, 1.10917)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_5xatb")
@@ -192,7 +192,7 @@ text = "You cannot escape
 vertical_alignment = 1
 
 [node name="pressurePlate" parent="." instance=ExtResource("13_emuuf")]
-transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 2, 2.91641, 0.0249998, -1.14277)
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 2, 1.53784, 0.0249998, 0.0750556)
 plate_nr = 1
 
 [node name="WoodenDoor2" parent="." instance=ExtResource("14_1hgjb")]

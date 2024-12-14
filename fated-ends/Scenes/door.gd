@@ -16,7 +16,10 @@ func _process(delta: float) -> void:
 func door_activated(door_id: int):
 	if door_id == self.door_id:
 		$AnimationPlayer.play("open")
+		set_deferred("$Armature/Skeleton3D/WoodenDoor/Area3D/CollisionShape3D.disabled", true)
 	
 func door_deactivated(door_id: int):
+	
 	if door_id == self.door_id:
 		$AnimationPlayer.play("close")
+		set_deferred("$Armature/Skeleton3D/WoodenDoor/Area3D/CollisionShape3D.disabled", false)

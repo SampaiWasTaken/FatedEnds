@@ -18,13 +18,13 @@ func deactivate_plate() -> void:
 
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-	if body.is_in_group("player"):
+	if body.is_in_group("player") or body.is_in_group("corpse"):
 		plate_activated = false
 		deactivate_plate() 
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	print("plate pressed")
-	if body.is_in_group("player"):  
+	print(body)
+	if body.is_in_group("player") or body.is_in_group("corpse"):
 		plate_activated = true
 		activate_plate()  

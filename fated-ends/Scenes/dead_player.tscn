@@ -4,49 +4,55 @@
 [ext_resource type="Texture2D" uid="uid://dbwk6trctd08a" path="res://Assets/skull_04_character texture2.png" id="2_cbr1n"]
 [ext_resource type="Script" path="res://Scripts/dead_player.gd" id="2_y21vl"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_fi0q5"]
+size = Vector3(1, 0.517517, 2.23755)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_layyc"]
 albedo_texture = ExtResource("2_cbr1n")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_mnecq"]
-size = Vector3(1.21704, 0.637299, 2.21066)
 
 [node name="Dying Backwards" instance=ExtResource("1_6tv0v")]
 script = ExtResource("2_y21vl")
 
-[node name="Skeleton3D" parent="." index="0"]
-bones/0/position = Vector3(-0.304521, 0.13802, -0.969346)
-bones/0/rotation = Quaternion(-0.694935, 0.0408595, -0.0795165, 0.713493)
-bones/1/rotation = Quaternion(-0.0361735, -0.00632337, -0.00378759, 0.999318)
-bones/2/rotation = Quaternion(0.0186253, -0.0111963, 0.0033768, 0.999758)
-bones/3/rotation = Quaternion(0.0186801, -0.0111672, 0.00319394, 0.999758)
-bones/4/rotation = Quaternion(0.00772873, 0.0411087, -0.0554827, 0.997583)
-bones/5/rotation = Quaternion(-0.0824397, 0.135185, -0.0861212, 0.983622)
-bones/7/rotation = Quaternion(-0.514937, -0.493099, 0.452373, -0.535772)
-bones/8/rotation = Quaternion(0.0559408, 0.383116, 0.0637987, 0.919795)
-bones/9/rotation = Quaternion(0.000378271, -0.000705673, 0.00489979, 0.999988)
-bones/11/rotation = Quaternion(0.475664, -0.522843, 0.481293, 0.518397)
-bones/12/rotation = Quaternion(0.21281, -0.442892, -0.02893, 0.870472)
-bones/13/rotation = Quaternion(0.014563, 0.0241431, -0.18746, 0.981868)
-bones/15/rotation = Quaternion(0.0262075, 0.284117, 0.933091, -0.218932)
-bones/16/rotation = Quaternion(-0.39178, -0.0475387, 0.0163359, 0.918685)
-bones/17/rotation = Quaternion(0.418989, -0.167473, 0.00733279, 0.892383)
-bones/18/rotation = Quaternion(0.31692, -0.27478, 0.0964763, 0.902635)
-bones/20/rotation = Quaternion(-0.122777, 0.08759, 0.98475, 0.0867254)
-bones/21/rotation = Quaternion(-0.22713, 0.0214096, -0.00464598, 0.973618)
-bones/22/rotation = Quaternion(0.396182, 0.170019, -0.0207184, 0.902056)
-bones/23/rotation = Quaternion(0.314835, 0.274705, -0.0957278, 0.903467)
+[node name="RigidBody3D" type="RigidBody3D" parent="." index="0"]
+collision_mask = 2
+mass = 10000.0
+can_sleep = false
+freeze = true
+freeze_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.299494, -1.17468)
+shape = SubResource("BoxShape3D_fi0q5")
+disabled = true
+
+[node name="Skeleton3D" parent="." index="1"]
+bones/0/position = Vector3(-0.167714, 0.871833, 0.00397694)
+bones/0/rotation = Quaternion(0.0220324, -0.0146556, -0.00741013, 0.999622)
+bones/1/rotation = Quaternion(-0.0579604, -0.00269563, 0.00358866, 0.998309)
+bones/2/rotation = Quaternion(-0.0361883, -0.00600175, 0.00642647, 0.999306)
+bones/3/rotation = Quaternion(-0.0362022, -0.00581808, 0.00648016, 0.999307)
+bones/4/rotation = Quaternion(0.0739538, -0.000821037, 0.0164229, 0.997126)
+bones/5/rotation = Quaternion(0.0116081, 0.0101604, -0.00742458, 0.999854)
+bones/7/rotation = Quaternion(-0.509359, -0.470514, 0.602231, -0.395585)
+bones/8/rotation = Quaternion(0.454371, 0.267995, 0.245743, 0.813226)
+bones/9/rotation = Quaternion(0.000608992, -0.00105282, 0.00789255, 0.999968)
+bones/11/rotation = Quaternion(0.575062, -0.428284, 0.551884, 0.425794)
+bones/12/rotation = Quaternion(0.404637, -0.200616, -0.158521, 0.878005)
+bones/13/rotation = Quaternion(0.000233117, 0.00277947, -0.00299599, 0.999992)
+bones/15/rotation = Quaternion(0.0503869, 0.166863, 0.977656, -0.117505)
+bones/16/rotation = Quaternion(-0.409957, -0.048989, 0.024913, 0.910448)
+bones/17/rotation = Quaternion(0.61502, -0.053353, -0.00693303, 0.786674)
+bones/18/rotation = Quaternion(0.31692, -0.27478, 0.0964762, 0.902635)
+bones/20/rotation = Quaternion(-0.0663477, 0.181329, 0.978449, 0.0731869)
+bones/21/rotation = Quaternion(-0.40596, -0.0427866, -0.00653763, 0.912865)
+bones/22/rotation = Quaternion(0.621318, 0.0251186, -0.0486866, 0.781641)
+bones/23/rotation = Quaternion(0.314836, 0.274705, -0.0957275, 0.903466)
 
 [node name="body" parent="Skeleton3D" index="0"]
+layers = 2
 material_override = SubResource("StandardMaterial3D_layyc")
 
-[node name="AnimationPlayer" parent="." index="1"]
+[node name="AnimationPlayer" parent="." index="2"]
 speed_scale = 1.7
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.272695, 0.0484161, -1.19569)
-shape = SubResource("BoxShape3D_mnecq")
-disabled = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
