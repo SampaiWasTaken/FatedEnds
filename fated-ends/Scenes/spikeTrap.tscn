@@ -16,7 +16,6 @@ size = Vector3(1, 0.253479, 0.971985)
 
 [node name="DeathPlane" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.34012, 0)
-collision_mask = 2
 
 [node name="CollisionShape3D" parent="DeathPlane" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0330083, 0)

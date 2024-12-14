@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dffai7cb8sehi"]
+[gd_scene load_steps=32 format=3 uid="uid://dffai7cb8sehi"]
 
 [ext_resource type="PackedScene" uid="uid://dncv1j7hufsuy" path="res://Scenes/Player/player.tscn" id="1_4axfq"]
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
@@ -21,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://ddsdg58radnl6" path="res://Scenes/torch.tscn" id="19_qb56k"]
 [ext_resource type="PackedScene" uid="uid://cvs17fs0yysbq" path="res://resources/sword/interactable_sword.tscn" id="20_13jfc"]
 [ext_resource type="AudioStream" uid="uid://utvfpmag805g" path="res://Assets/sounds/sfx/earthquake.wav" id="21_7682g"]
+[ext_resource type="PackedScene" uid="uid://dysvdy2mxmts" path="res://MazeTrap.tscn" id="22_hjwfv"]
+[ext_resource type="PackedScene" path="res://Scenes/crates_puzzle_hint.tscn" id="23_nwtif"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -91,7 +93,7 @@ size = Vector3(1, 6.12237, 5.52348)
 environment = SubResource("Environment_pyexv")
 
 [node name="player" parent="." instance=ExtResource("1_4axfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.2184, 0, 35.4301)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.4172, 0, -1.82266)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -219,6 +221,9 @@ door_id = 3
 [node name="Lever" parent="." instance=ExtResource("15_5ello")]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91068e-15, 0.210008, 1.70754, -39.9823)
 
+[node name="MeshInstance3D" parent="Lever" index="0"]
+transform = Transform3D(0.2, 0, 0, 0, 0.818056, 0.147366, 0, -0.891563, 0.135216, 0, -0.128848, 0)
+
 [node name="doorOpener" parent="Lever" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0537992, 0.0126824, 0.033576)
 leverID = 2
@@ -239,8 +244,11 @@ spot_angle = 82.45
 [node name="interactable_sword" parent="." instance=ExtResource("20_13jfc")]
 transform = Transform3D(1.30476, -0.740002, -3.23465e-08, 0, -6.55671e-08, 1.5, -0.740002, -1.30476, -5.70329e-08, 1.40611, 0.0970406, -39.9218)
 
+[node name="moveable_crate11" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.978267, 0, -0.207348, 0, 1, 0, 0.207348, 0, 0.978267, 12.9152, 0.965931, 13.3032)
+
 [node name="moveable_crate" parent="." instance=ExtResource("19_24ssg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.04743, 0.764669, -2.91513)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.63915, 0.732034, 0.565189)
 
 [node name="moveable_crate2" parent="." instance=ExtResource("19_24ssg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.1898, -1.63037, 16.68)
@@ -295,6 +303,126 @@ transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 14.7596, -3.0652, -30.825)
 [node name="Spikes" parent="Spikes3" instance=ExtResource("9_ddsrx")]
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 14.3419, -3.43123, -23.769)
 
+[node name="Spikes3" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 59.1006, 5.00315, -30.8134)
+
+[node name="Spikes4" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 54.8064, 5.00315, -30.8134)
+
+[node name="Spikes5" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 50.6938, 5.00315, -30.8134)
+
+[node name="Spikes6" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 46.6438, 5.00315, -30.8167)
+
+[node name="Spikes7" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 42.6566, 5.00315, -30.8134)
+
+[node name="Spikes8" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 59.1006, 5.00315, -26.8534)
+
+[node name="Spikes9" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 54.8064, 5.00315, -26.8534)
+
+[node name="Spikes10" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 50.6938, 5.00315, -26.8534)
+
+[node name="Spikes11" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 46.6438, 5.00315, -26.8568)
+
+[node name="Spikes12" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 42.6566, 5.00315, -26.8534)
+
+[node name="Spikes13" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 59.1006, 5.00315, -22.8359)
+
+[node name="Spikes14" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 54.8064, 5.00315, -22.8359)
+
+[node name="Spikes15" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 50.6938, 5.00315, -22.8359)
+
+[node name="Spikes16" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 46.6438, 5.00315, -22.8392)
+
+[node name="Spikes17" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 42.6566, 5.00315, -22.8359)
+
+[node name="Spikes18" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 59.1006, 5.00315, -18.8759)
+
+[node name="Spikes19" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 54.8064, 5.00315, -18.8759)
+
+[node name="Spikes20" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 50.6938, 5.00315, -18.8759)
+
+[node name="Spikes21" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 46.6438, 5.00315, -18.8792)
+
+[node name="Spikes22" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 42.6566, 5.00315, -18.8759)
+
+[node name="Spikes23" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 59.1006, 5.00315, -14.86)
+
+[node name="Spikes24" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 54.8064, 5.00315, -14.86)
+
+[node name="Spikes25" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 50.6938, 5.00315, -14.86)
+
+[node name="Spikes26" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 46.6438, 5.00315, -14.8633)
+
+[node name="Spikes27" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 42.6566, 5.00315, -14.86)
+
+[node name="Spikes28" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 59.1006, 5.00315, -10.9)
+
+[node name="Spikes29" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 54.8064, 5.00315, -10.9)
+
+[node name="Spikes30" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 50.6938, 5.00315, -10.9)
+
+[node name="Spikes31" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 46.6438, 5.00315, -10.9033)
+
+[node name="Spikes32" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 42.6566, 5.00315, -10.9)
+
+[node name="Spikes33" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 59.1006, 5.00315, -6.88244)
+
+[node name="Spikes34" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 54.8064, 5.00315, -6.88244)
+
+[node name="Spikes35" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 50.6938, 5.00315, -6.88244)
+
+[node name="Spikes36" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 46.6438, 5.00315, -6.88576)
+
+[node name="Spikes37" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 42.6566, 5.00315, -6.88244)
+
+[node name="Spikes38" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 59.1006, 5.00315, -2.92245)
+
+[node name="Spikes39" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 54.8064, 5.00315, -2.92245)
+
+[node name="Spikes40" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 50.6938, 5.00315, -2.92245)
+
+[node name="Spikes41" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 46.6438, 5.00315, -2.92577)
+
+[node name="Spikes42" parent="Spikes3" instance=ExtResource("9_ddsrx")]
+transform = Transform3D(4, 0, 0, 0, -6, 6.03983e-07, 0, -9.05975e-07, -4, 42.6566, 5.00315, -2.92245)
+
 [node name="AudioPlayers" type="Node3D" parent="."]
 
 [node name="BellPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
@@ -313,7 +441,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.5851, 6.9607, 35.9193)
 curve = SubResource("Curve3D_seiah")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.990097, 0.139612, -0.0140807, 0, 0.100342, 0.994943, 0.140323, 0.985081, -0.0993513, 0, 0, 0)
+transform = Transform3D(-0.990097, 0.139612, -0.0140806, 0, 0.100342, 0.994943, 0.140323, 0.985081, -0.0993508, 0, 0, 0)
 
 [node name="Node3D" parent="Path3D/PathFollow3D" instance=ExtResource("3_h43rd")]
 transform = Transform3D(-0.990106, 2.38419e-07, 0.140324, 0.139616, 0.100346, 0.985108, -0.0140807, 0.994953, -0.0993531, -0.0832825, 0.322483, -0.0591838)
@@ -336,6 +464,54 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Path3D/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.385311, 2.00508, -0.0103912)
 shape = SubResource("BoxShape3D_30h7v")
+
+[node name="Maze" parent="." instance=ExtResource("22_hjwfv")]
+transform = Transform3D(4.76995e-08, 0, -4, 0, 1, 0, 4, 0, 4.76995e-08, 51.0104, 0.0191171, -17.9392)
+
+[node name="cratesPuzzleHint" parent="." instance=ExtResource("23_nwtif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.90568, 0.860677, 14.5086)
+
+[node name="moveable_crate14" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.946452, 0, 0.322844, 0, 1, 0, -0.322844, 0, 0.946452, 29.0805, 1.93186, 18.8191)
+
+[node name="moveable_crate12" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.946452, 0, 0.322844, 0, 1, 0, -0.322844, 0, 0.946452, 12.9201, 0.965931, 11.3713)
+
+[node name="moveable_crate13" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.911554, 0, 0.41118, 0, 1, 0, -0.41118, 0, 0.911554, 5.63183, 0.965931, 12.1025)
+
+[node name="moveable_crate15" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.929326, 0, 0.36926, 0, 1, 0, -0.36926, 0, 0.929326, 12.6642, 0.870008, 9.02773)
+
+[node name="moveable_crate16" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2258, 1.99049, 11.5476)
+
+[node name="moveable_crate17" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 8.10321, 2.01935, 10.1972)
+
+[node name="moveable_crate18" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 6.95913, 2.4503, 8.82407)
+
+[node name="moveable_crate19" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.85904, 0, 0.511908, 0, 1, 0, -0.511908, 0, 0.85904, 10.09, 2.20869, 13.7187)
+
+[node name="moveable_crate20" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 10.558, 1.90689, 7.84619)
+
+[node name="moveable_crate21" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 5.45091, 0.965931, 8.61004)
+
+[node name="moveable_crate22" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 7.45336, 1.79312, 11.4869)
+
+[node name="moveable_crate23" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 9.32911, 1.9306, 10.5624)
+
+[node name="moveable_crate24" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.271726, 0, -0.962375, 0, 1, 0, 0.962375, 0, 0.271726, 5.81155, 0.965931, 14.2356)
+
+[node name="moveable_crate25" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 10.558, 0.732635, 6.50759)
 
 [connection signal="kys" from="player" to="GameManager" method="player_death_by_trap"]
 [connection signal="interacted" from="interactable_sword" to="player" method="_on_interactable_sword_interacted"]
