@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/death_plane.gd" id="1_k3yat"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_li7xi"]
-size = Vector3(1, 0.001, 1)
+size = Vector3(1, 0.0966855, 1)
 
 [node name="Origin" type="Marker3D"]
 
