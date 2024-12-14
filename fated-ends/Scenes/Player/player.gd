@@ -17,6 +17,8 @@ var playerhealth = 100
 var CamRotation = Vector2(0,0)
 var MouseSens = 0.007
 
+var playingAudio = true
+
 func _ready() -> void:
 	cam.current = true
 	add_to_group("player")
@@ -109,16 +111,25 @@ func _on_ui_shooting() -> void:
 	pass # Replace with function body.
 
 func _process(delta: float) -> void:
-	if is_walking():  # Ensure wobble only happens when moving
+	if is_walking():  
 		wobble_timer += delta * wobble_speed
 		var wobble_offset = sin(wobble_timer) * wobble_amount
 		cam.position.y = cam_init_pos + wobble_offset
+		#$AudioStreamPlayer.autoplay = true
+		if not playingAudio:
+			$AudioStreamPlayer.pitch_scale = 0.5
+			$AudioStreamPlayer.volume_db = -5
+			$AudioStreamPlayer.play()
+		playingAudio = true
 	else:
-		wobble_timer = 0.0  # Reset wobble when stationary
+		wobble_timer = 0.0  
 		cam.position.y = cam_init_pos
+		$AudioStreamPlayer.stop()
+		playingAudio = false
 		
 func is_walking() -> bool:
 	if is_on_floor():
-		return !velocity.is_equal_approx(Vector3.ZERO)  # Example check for movement
+		return !velocity.is_equal_approx(Vector3.ZERO)
+		  # Example check for movement
 	else:
 		return false

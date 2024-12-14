@@ -9,6 +9,7 @@ func _ready() -> void:
 
 
 func player_death_by_trap():
+	$"../DeathAudioPlayer".play()
 	$"../CanvasLayer/CanvasAnimPlayer".play("fade_black")
 	spawn_corpse()
 	reset_player_position()  

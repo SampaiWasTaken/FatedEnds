@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dffai7cb8sehi"]
+[gd_scene load_steps=24 format=3 uid="uid://dffai7cb8sehi"]
 
 [ext_resource type="PackedScene" uid="uid://dncv1j7hufsuy" path="res://Scenes/Player/player.tscn" id="1_4axfq"]
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
@@ -15,7 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://03mghejjc4g8" path="res://Scenes/pressurePlate.tscn" id="13_emuuf"]
 [ext_resource type="PackedScene" uid="uid://cwrr1q2b75w8y" path="res://Scenes/door.tscn" id="14_1hgjb"]
 [ext_resource type="PackedScene" uid="uid://dwckh7oj2njh0" path="res://Scenes/interactable/lever.tscn" id="15_5ello"]
-[ext_resource type="AudioStream" uid="uid://bj586ea8a43j2" path="res://Assets/sounds/Shadow's Embrace(1).mp3" id="15_f1ycn"]
+[ext_resource type="AudioStream" uid="uid://dvlnrds7aegeg" path="res://Assets/sounds/upside down grin2.ogg" id="16_mdjkr"]
+[ext_resource type="AudioStream" uid="uid://c14u1xioipsc5" path="res://Assets/sounds/sfx/death.wav" id="17_nves2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -105,7 +106,7 @@ corpse_scene = ExtResource("5_l8je5")
 script = ExtResource("5_luvpe")
 timer_duration = 400.0
 
-[node name="testBlock" parent="." instance=ExtResource("8_b6lgw")]
+[node name="testBlock" parent="." groups=["corpse"] instance=ExtResource("8_b6lgw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2346, 1.45796, 0)
 
 [node name="Spikes2" parent="." instance=ExtResource("9_ddsrx")]
@@ -114,7 +115,7 @@ transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 14.7596, -3.0652, -30.825)
 [node name="Spikes" parent="." instance=ExtResource("9_ddsrx")]
 transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 14.3419, -3.43123, -23.769)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BellPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_5xatb")
 volume_db = -5.0
 
@@ -202,12 +203,15 @@ transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 2, 1.53784, 0.0249998, 0.07505
 plate_nr = 1
 
 [node name="WoodenDoor2" parent="." instance=ExtResource("14_1hgjb")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.997019, -0.00762939, 7.02274)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 13.7143, 0, -19.5282)
 door_id = 1
 
 [node name="Lever" parent="." instance=ExtResource("15_5ello")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7427, 0.0307594, -3.24139)
 
 [node name="BGLoop" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("15_f1ycn")
+stream = ExtResource("16_mdjkr")
 autoplay = true
+
+[node name="DeathAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_nves2")
