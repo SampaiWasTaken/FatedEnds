@@ -19,8 +19,8 @@ script = ExtResource("2_22u5j")
 
 [node name="Skeleton3D" parent="Armature" index="0"]
 bones/1/position = Vector3(-0.419832, 0.65856, 5.38805e-08)
-bones/1/rotation = Quaternion(-3.00384e-07, -2.05378e-07, -0.707107, 0.707107)
-bones/2/rotation = Quaternion(-0.689922, 0.689922, 0.154942, 0.154942)
+bones/1/rotation = Quaternion(-2.40542e-07, -1.45536e-07, -0.707107, 0.707107)
+bones/2/rotation = Quaternion(-0.689923, 0.689922, 0.154942, 0.154942)
 
 [node name="WoodenDoor" parent="Armature/Skeleton3D" index="0"]
 material_override = SubResource("StandardMaterial3D_wicyp")

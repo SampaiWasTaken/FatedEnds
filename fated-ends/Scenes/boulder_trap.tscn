@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scripts/boulder_trap.gd" id="2_q1yv6"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xrqq7"]
-radius = 0.522884
+radius = 2.65433
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_418b0"]
 albedo_texture = ExtResource("2_4kqip")
