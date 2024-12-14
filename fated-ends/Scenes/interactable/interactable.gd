@@ -12,7 +12,7 @@ func get_prompt():
 	for action in InputMap.action_get_events(promt_action):
 		if action is InputEventKey:
 			key_name = action.as_text_physical_keycode()
-	return promt_message + "\n[" + key_name + "]"
+	return promt_message + " [" + key_name + "]"
 
 func interact(body):
 	emit_signal("interacted",body)

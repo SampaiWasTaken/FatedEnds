@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 func player_death_by_trap():
 	$"../AudioPlayers/DeathAudioPlayer".play()
 	$"../CanvasLayer/CanvasAnimPlayer".play("fade_black")
+	$"../TimerManager".timer -= 10
 	spawn_corpse()
 	reset_player_position()  
 
