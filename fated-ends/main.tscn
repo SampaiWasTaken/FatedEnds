@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dffai7cb8sehi"]
+[gd_scene load_steps=32 format=3 uid="uid://dffai7cb8sehi"]
 
 [ext_resource type="PackedScene" uid="uid://dncv1j7hufsuy" path="res://Scenes/Player/player.tscn" id="1_4axfq"]
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://cvs17fs0yysbq" path="res://resources/sword/interactable_sword.tscn" id="20_13jfc"]
 [ext_resource type="AudioStream" uid="uid://utvfpmag805g" path="res://Assets/sounds/sfx/earthquake.wav" id="21_7682g"]
 [ext_resource type="PackedScene" uid="uid://dysvdy2mxmts" path="res://MazeTrap.tscn" id="22_hjwfv"]
+[ext_resource type="PackedScene" path="res://Scenes/crates_puzzle_hint.tscn" id="23_nwtif"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -243,8 +244,11 @@ spot_angle = 82.45
 [node name="interactable_sword" parent="." instance=ExtResource("20_13jfc")]
 transform = Transform3D(1.30476, -0.740002, -3.23465e-08, 0, -6.55671e-08, 1.5, -0.740002, -1.30476, -5.70329e-08, 1.40611, 0.0970406, -39.9218)
 
+[node name="moveable_crate11" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.978267, 0, -0.207348, 0, 1, 0, 0.207348, 0, 0.978267, 12.9152, 0.965931, 13.3032)
+
 [node name="moveable_crate" parent="." instance=ExtResource("19_24ssg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.04743, 0.764669, -2.91513)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.63915, 0.732034, 0.565189)
 
 [node name="moveable_crate2" parent="." instance=ExtResource("19_24ssg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.1898, -1.63037, 16.68)
@@ -463,6 +467,51 @@ shape = SubResource("BoxShape3D_30h7v")
 
 [node name="Maze" parent="." instance=ExtResource("22_hjwfv")]
 transform = Transform3D(4.76995e-08, 0, -4, 0, 1, 0, 4, 0, 4.76995e-08, 51.0104, 0.0191171, -17.9392)
+
+[node name="cratesPuzzleHint" parent="." instance=ExtResource("23_nwtif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.90568, 0.860677, 14.5086)
+
+[node name="moveable_crate14" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.946452, 0, 0.322844, 0, 1, 0, -0.322844, 0, 0.946452, 29.0805, 1.93186, 18.8191)
+
+[node name="moveable_crate12" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.946452, 0, 0.322844, 0, 1, 0, -0.322844, 0, 0.946452, 12.9201, 0.965931, 11.3713)
+
+[node name="moveable_crate13" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.911554, 0, 0.41118, 0, 1, 0, -0.41118, 0, 0.911554, 5.63183, 0.965931, 12.1025)
+
+[node name="moveable_crate15" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.929326, 0, 0.36926, 0, 1, 0, -0.36926, 0, 0.929326, 12.6642, 0.870008, 9.02773)
+
+[node name="moveable_crate16" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2258, 1.99049, 11.5476)
+
+[node name="moveable_crate17" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 8.10321, 2.01935, 10.1972)
+
+[node name="moveable_crate18" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 6.95913, 2.4503, 8.82407)
+
+[node name="moveable_crate19" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.85904, 0, 0.511908, 0, 1, 0, -0.511908, 0, 0.85904, 10.09, 2.20869, 13.7187)
+
+[node name="moveable_crate20" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 10.558, 1.90689, 7.84619)
+
+[node name="moveable_crate21" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 5.45091, 0.965931, 8.61004)
+
+[node name="moveable_crate22" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 7.45336, 1.79312, 11.4869)
+
+[node name="moveable_crate23" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 9.32911, 1.9306, 10.5624)
+
+[node name="moveable_crate24" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.271726, 0, -0.962375, 0, 1, 0, 0.962375, 0, 0.271726, 5.81155, 0.965931, 14.2356)
+
+[node name="moveable_crate25" parent="." instance=ExtResource("19_24ssg")]
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 10.558, 0.732635, 6.50759)
 
 [connection signal="kys" from="player" to="GameManager" method="player_death_by_trap"]
 [connection signal="interacted" from="interactable_sword" to="player" method="_on_interactable_sword_interacted"]
