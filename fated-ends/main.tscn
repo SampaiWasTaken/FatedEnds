@@ -192,7 +192,7 @@ text = "You cannot escape
 vertical_alignment = 1
 
 [node name="pressurePlate" parent="." instance=ExtResource("13_emuuf")]
-transform = Transform3D(0.943, 0, 0, 0, 0.05, 0, 0, 0, 0.943, 2.91641, 0.0249998, -1.14277)
+transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 2, 2.91641, 0.0249998, -1.14277)
 plate_nr = 1
 
 [node name="WoodenDoor2" parent="." instance=ExtResource("14_1hgjb")]
