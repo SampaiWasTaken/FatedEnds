@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bealdmeqb1tvk"
-path.s3tc="res://.godot/imported/161b.jpg-09afc31e504d456ef3cdaf6eaad5e7b9.s3tc.ctex"
+uid="uid://idlo34u5h8tv"
+path.s3tc="res://.godot/imported/WoodenDoorNormal.png-e7c41867add21c6b207c9bf9542d1fdd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/161b.jpg"
-dest_files=["res://.godot/imported/161b.jpg-09afc31e504d456ef3cdaf6eaad5e7b9.s3tc.ctex"]
+source_file="res://Assets/Textures/textures/WoodenDoorNormal.png"
+dest_files=["res://.godot/imported/WoodenDoorNormal.png-e7c41867add21c6b207c9bf9542d1fdd.s3tc.ctex"]
 
 [params]
 

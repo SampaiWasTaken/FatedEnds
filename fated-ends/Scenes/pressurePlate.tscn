@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://03mghejjc4g8"]
+
+[ext_resource type="Texture2D" uid="uid://c43qtl0fa3xis" path="res://Assets/Textures/168.jpg" id="1_8xuuc"]
+[ext_resource type="Script" path="res://Scripts/pressure_plate.gd" id="2_ajwb0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rhor"]
+albedo_texture = ExtResource("1_8xuuc")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ulqwj"]
+material = SubResource("StandardMaterial3D_1rhor")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5g7sy"]
+
+[node name="pressurePlate" type="MeshInstance3D"]
+transform = Transform3D(0.943, 0, 0, 0, 0.05, 0, 0, 0, 0.943, 0, 0.025, 0)
+mesh = SubResource("BoxMesh_ulqwj")
+script = ExtResource("2_ajwb0")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_5g7sy")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

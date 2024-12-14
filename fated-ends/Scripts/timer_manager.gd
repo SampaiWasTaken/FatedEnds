@@ -4,6 +4,7 @@ extends Node
 @onready var timer: float = timer_duration  
 @onready var timer_label: Label  
 var playingAudio = false
+var played = false
 
 func _ready():
 	timer_label = $"../CanvasLayer/DeathTimerLabel"  
@@ -15,8 +16,9 @@ func _process(delta):
 	timer_label.text = "Time Remaining: " + str(int(timer))
 	
 	if timer <= 10:
-		if not playingAudio:
+		if not playingAudio and not played:
 			playingAudio = true
+			played = true
 			$"../AudioStreamPlayer".volume_db = -15
 			$"../AudioStreamPlayer".play()
 		timer_label.set("theme_override_colors/font_color", Color.RED) 
@@ -31,6 +33,5 @@ func audio_finished():
 	
 func trigger_fated_death():
 	$"../CanvasLayer/Fated_Death".show()
-	print("Fate claims you.")
 	await get_tree().create_timer(5.0).timeout
 	get_tree().reload_current_scene()

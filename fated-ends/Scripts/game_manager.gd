@@ -5,12 +5,10 @@ extends Node
 
 func _ready() -> void:
 	for trap in get_tree().get_nodes_in_group("trap"):
-		print(trap)
 		trap.connect("player_death", player_death_by_trap)
 
 
 func player_death_by_trap():
-	print("triggered death")
 	$"../CanvasLayer/CanvasAnimPlayer".play("fade_black")
 	spawn_corpse()
 	reset_player_position()  

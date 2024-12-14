@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd6dpb8jwuad8"]
+
+[ext_resource type="PackedScene" uid="uid://dig3o0bgtv2hh" path="res://Assets/Dying Backwards.fbx" id="1_6tv0v"]
+[ext_resource type="Texture2D" uid="uid://dbwk6trctd08a" path="res://Assets/skull_04_character texture2.png" id="2_cbr1n"]
+[ext_resource type="Script" path="res://Scripts/dead_player.gd" id="2_y21vl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_layyc"]
+albedo_texture = ExtResource("2_cbr1n")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mnecq"]
+size = Vector3(1.21704, 0.637299, 2.21066)
+
+[node name="Dying Backwards" instance=ExtResource("1_6tv0v")]
+script = ExtResource("2_y21vl")
+
+[node name="Skeleton3D" parent="." index="0"]
+bones/0/position = Vector3(-0.304521, 0.13802, -0.969346)
+bones/0/rotation = Quaternion(-0.694935, 0.0408595, -0.0795165, 0.713493)
+bones/1/rotation = Quaternion(-0.0361735, -0.00632337, -0.00378759, 0.999318)
+bones/2/rotation = Quaternion(0.0186253, -0.0111963, 0.0033768, 0.999758)
+bones/3/rotation = Quaternion(0.0186801, -0.0111672, 0.00319394, 0.999758)
+bones/4/rotation = Quaternion(0.00772873, 0.0411087, -0.0554827, 0.997583)
+bones/5/rotation = Quaternion(-0.0824397, 0.135185, -0.0861212, 0.983622)
+bones/7/rotation = Quaternion(-0.514937, -0.493099, 0.452373, -0.535772)
+bones/8/rotation = Quaternion(0.0559408, 0.383116, 0.0637987, 0.919795)
+bones/9/rotation = Quaternion(0.000378271, -0.000705673, 0.00489979, 0.999988)
+bones/11/rotation = Quaternion(0.475664, -0.522843, 0.481293, 0.518397)
+bones/12/rotation = Quaternion(0.21281, -0.442892, -0.02893, 0.870472)
+bones/13/rotation = Quaternion(0.014563, 0.0241431, -0.18746, 0.981868)
+bones/15/rotation = Quaternion(0.0262075, 0.284117, 0.933091, -0.218932)
+bones/16/rotation = Quaternion(-0.39178, -0.0475387, 0.0163359, 0.918685)
+bones/17/rotation = Quaternion(0.418989, -0.167473, 0.00733279, 0.892383)
+bones/18/rotation = Quaternion(0.31692, -0.27478, 0.0964763, 0.902635)
+bones/20/rotation = Quaternion(-0.122777, 0.08759, 0.98475, 0.0867254)
+bones/21/rotation = Quaternion(-0.22713, 0.0214096, -0.00464598, 0.973618)
+bones/22/rotation = Quaternion(0.396182, 0.170019, -0.0207184, 0.902056)
+bones/23/rotation = Quaternion(0.314835, 0.274705, -0.0957278, 0.903467)
+
+[node name="body" parent="Skeleton3D" index="0"]
+material_override = SubResource("StandardMaterial3D_layyc")
+
+[node name="AnimationPlayer" parent="." index="1"]
+speed_scale = 1.7
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.272695, 0.0484161, -1.19569)
+shape = SubResource("BoxShape3D_mnecq")
+disabled = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

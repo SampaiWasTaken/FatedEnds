@@ -14,7 +14,6 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	print(body.name)
 	if body.name == "player":
 		emit_signal("player_death")
 		print("test 123 du bist tot")

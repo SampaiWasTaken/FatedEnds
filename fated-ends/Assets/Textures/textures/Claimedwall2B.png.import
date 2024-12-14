@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bealdmeqb1tvk"
-path.s3tc="res://.godot/imported/161b.jpg-09afc31e504d456ef3cdaf6eaad5e7b9.s3tc.ctex"
+uid="uid://bei7vkn5566lp"
+path.s3tc="res://.godot/imported/Claimedwall2B.png-f6b2bf371a5b8a3b8cc0017b7f807ed6.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/Textures/161b.jpg"
-dest_files=["res://.godot/imported/161b.jpg-09afc31e504d456ef3cdaf6eaad5e7b9.s3tc.ctex"]
+source_file="res://Assets/Textures/textures/Claimedwall2B.png"
+dest_files=["res://.godot/imported/Claimedwall2B.png-f6b2bf371a5b8a3b8cc0017b7f807ed6.s3tc.ctex"]
 
 [params]
 
