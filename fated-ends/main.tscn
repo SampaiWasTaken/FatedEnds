@@ -34,7 +34,6 @@ tonemap_mode = 2
 glow_enabled = true
 glow_normalized = true
 glow_blend_mode = 0
-fog_enabled = true
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.1
 
@@ -127,6 +126,7 @@ stream = ExtResource("10_5xatb")
 volume_db = -5.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="DeathTimerLabel" type="Label" parent="CanvasLayer"]
 offset_right = 117.0
