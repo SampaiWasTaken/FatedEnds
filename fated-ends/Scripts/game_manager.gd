@@ -30,5 +30,6 @@ func spawn_corpse():
 
 
 func reset_player_position():
+	player.resetAnimation()
 	player.rotation = Vector3.ZERO
 	player.transform.origin = Vector3(0, 0, 0)  

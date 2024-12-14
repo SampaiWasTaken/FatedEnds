@@ -6,7 +6,7 @@ extends CharacterBody3D
 var wobble_timer: float = 0.0  
 var walking = false
 
-var sword_equiped = false
+@export var sword_equiped:bool = false
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -23,6 +23,8 @@ var MouseSens = 0.007
 
 var playingAudio = true
 
+signal kys
+
 func _ready() -> void:
 	$"CamContainer/arm/Low Poly Sword_003".visible = false
 	#cam.current = true
@@ -35,6 +37,8 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		var MouseEvent = event.relative*MouseSens
 		CameraLook(MouseEvent)
+	if event.is_action_pressed("attack"):
+		$CamContainer/AnimationPlayer.play("kys")
 
 # https://www.youtube.com/watch?v=O77xgrp5nOY used this tutorial for mouse movement
 func CameraLook(Movement: Vector2):
@@ -141,6 +145,15 @@ func is_walking() -> bool:
 		  # Example check for movement
 	else:
 		return false
+		
+func emitKys():
+	emit_signal("kys")
 
 func is_sprinting() -> bool:
 	return Input.is_action_pressed("sprint")
+
+func resetAnimation():
+	if sword_equiped:
+		$CamContainer/AnimationPlayer.play("equipSword")
+	else :
+		$CamContainer/AnimationPlayer.play("interact")
