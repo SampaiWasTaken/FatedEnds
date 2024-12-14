@@ -119,7 +119,7 @@ func _process(delta: float) -> void:
 	if is_walking():  
 		wobble_timer += delta * (sprint_wobble_speed if is_sprinting() else wobble_speed)
 		var wobble_offset = sin(wobble_timer) * wobble_amount
-		cam.position.y = cam_init_pos + wobble_offset
+		camw.position.y = cam_init_pos + wobble_offset
 		#$AudioStreamPlayer.autoplay = true
 		if not is_sprinting():
 			$AudioStreamPlayer.pitch_scale = 0.5
@@ -131,7 +131,7 @@ func _process(delta: float) -> void:
 		playingAudio = true
 	else:
 		wobble_timer = 0.0  
-		cam.position.y = cam_init_pos
+		camw.position.y = cam_init_pos
 		$AudioStreamPlayer.stop()
 		playingAudio = false
 		
