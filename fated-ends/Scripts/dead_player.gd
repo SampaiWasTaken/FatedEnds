@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	$RigidBody3D/CollisionShape3D.disabled = false
 	$RigidBody3D.freeze = false
+	$RigidBody3D.position.y = 0
 	$RigidBody3D.force_update_transform()
 	#$RigidBody3D.move_and_collide(Vector3(0.1, 0, 0))
 	$RigidBody3D.freeze = true
