@@ -27,7 +27,10 @@ func _process(delta):
 		trigger_fated_death()
 func audio_finished():
 	playingAudio = false
-func trigger_fated_death():
 	
+	
+func trigger_fated_death():
+	$"../CanvasLayer/Fated_Death".show()
 	print("Fate claims you.")
+	await get_tree().create_timer(5.0).timeout
 	get_tree().reload_current_scene()
