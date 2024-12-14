@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dee42hewvjg1h"
+path="res://.godot/imported/Shadow's Embrace.mp3-ba8ef639a28de40b9127d66688708930.mp3str"
+
+[deps]
+
+source_file="res://Assets/sounds/Shadow's Embrace.mp3"
+dest_files=["res://.godot/imported/Shadow's Embrace.mp3-ba8ef639a28de40b9127d66688708930.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

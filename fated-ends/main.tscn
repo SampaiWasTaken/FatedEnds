@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dffai7cb8sehi"]
+[gd_scene load_steps=22 format=3 uid="uid://dffai7cb8sehi"]
 
 [ext_resource type="PackedScene" uid="uid://dncv1j7hufsuy" path="res://Scenes/Player/player.tscn" id="1_4axfq"]
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Scripts/labelBounce.gd" id="11_pcniy"]
 [ext_resource type="PackedScene" uid="uid://03mghejjc4g8" path="res://Scenes/pressurePlate.tscn" id="13_emuuf"]
 [ext_resource type="PackedScene" uid="uid://cwrr1q2b75w8y" path="res://Scenes/door.tscn" id="14_1hgjb"]
+[ext_resource type="AudioStream" uid="uid://bj586ea8a43j2" path="res://Assets/sounds/Shadow's Embrace(1).mp3" id="15_f1ycn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -199,3 +200,7 @@ plate_nr = 1
 [node name="WoodenDoor2" parent="." instance=ExtResource("14_1hgjb")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0.997019, -0.00762939, 7.02274)
 door_id = 1
+
+[node name="BGLoop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_f1ycn")
+autoplay = true
