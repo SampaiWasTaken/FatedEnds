@@ -1,7 +1,7 @@
 extends Node3D
 
 func _ready() -> void:
-	rotate_y(180)
+	#rotate_y(180)
 	add_to_group("corpse")
 	$AnimationPlayer.play("mixamo_com")
 	$AnimationPlayer.seek(1.2)

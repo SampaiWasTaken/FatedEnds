@@ -11,6 +11,7 @@ size = Vector3(1, 0.517517, 2.23755)
 albedo_texture = ExtResource("2_cbr1n")
 
 [node name="Dying Backwards" instance=ExtResource("1_6tv0v")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("2_y21vl")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." index="0"]

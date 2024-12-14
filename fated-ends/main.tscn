@@ -31,7 +31,6 @@ tonemap_mode = 2
 glow_enabled = true
 glow_normalized = true
 glow_blend_mode = 0
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.1
 
 [sub_resource type="Animation" id="Animation_81gnw"]
@@ -92,6 +91,7 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.78081, 2.69867, 14.1243)
 light_energy = 16.0
+omni_range = 2.86393
 
 [node name="Node3D" parent="." instance=ExtResource("3_h43rd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6491, 2.15774, -6.7238)
@@ -108,8 +108,11 @@ timer_duration = 400.0
 [node name="testBlock" parent="." instance=ExtResource("8_b6lgw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2346, 1.45796, 0)
 
+[node name="Spikes2" parent="." instance=ExtResource("9_ddsrx")]
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 14.7596, -3.0652, -30.825)
+
 [node name="Spikes" parent="." instance=ExtResource("9_ddsrx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93795, 0, 1.10917)
+transform = Transform3D(9, 0, 0, 0, 9, 0, 0, 0, 9, 14.3419, -3.43123, -23.769)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_5xatb")
