@@ -1,15 +1,15 @@
 extends Area3D
 
+var doorID = 4
+@onready var spawnPoint = $newSpawnPoint
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
+signal closeDoor(id:int)
+signal setSpawnPoint(spawnPoint:Vector3, player_respawn_rotation:Vector3)
+var closedDoor = false
 
 func _on_body_entered(body: Node3D) -> void:
+	if not closedDoor:
+		emit_signal("closeDoor", doorID)
+		emit_signal("setSpawnPoint", spawnPoint.global_position, spawnPoint.rotation)
+		closedDoor = true
 	pass # Replace with function body.
