@@ -4,6 +4,7 @@ var open = false
 var playingAudio = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	door_activated(4)
 	for plate in get_tree().get_nodes_in_group("plates"):
 		print(plate)
 		plate.connect("pressure_plate_activated", door_activated)

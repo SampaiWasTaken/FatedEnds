@@ -10,6 +10,7 @@ var inFinalRoom:bool = false
 func _ready() -> void:
 	for trap in get_tree().get_nodes_in_group("trap"):
 		trap.connect("player_death", player_death_by_trap)
+	reset_player_position()
 
 
 func _process(delta: float) -> void:
@@ -37,7 +38,9 @@ func spawn_corpse():
 func reset_player_position():
 	player.resetAnimation()
 	player.rotation = player_respawn_rotation
+	player.rotation.y = player_respawn_rotation.y
 	player.transform.origin = respawnPoint
+	player.CamRotation.x = -player_respawn_rotation.y
 
 func finalRoomTrigger(newSpawnpoint:Vector3, newplayer_respawn_rotation:Vector3):
 	respawnPoint = newSpawnpoint
