@@ -24,7 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://utvfpmag805g" path="res://Assets/sounds/sfx/earthquake.wav" id="21_7682g"]
 [ext_resource type="PackedScene" uid="uid://dysvdy2mxmts" path="res://Scenes/MazeTrap.tscn" id="22_hjwfv"]
 [ext_resource type="PackedScene" uid="uid://dqikjbstss5mh" path="res://Scenes/crates_puzzle_hint.tscn" id="23_nwtif"]
-[ext_resource type="PackedScene" uid="uid://om1tt8klh1pp" path="res://Scenes/blood_font_model.tscn" id="24_efxyo"]
+[ext_resource type="PackedScene" uid="uid://b6rtdeel2j5y8" path="res://podium.tscn" id="25_m5kq8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -43,6 +43,7 @@ tonemap_mode = 2
 glow_enabled = true
 glow_normalized = true
 glow_blend_mode = 0
+fog_enabled = true
 fog_light_color = Color(0.32856, 0.35778, 0.40371, 1)
 fog_light_energy = 2.13
 volumetric_fog_density = 0.1
@@ -100,7 +101,7 @@ size = Vector3(1, 6.12237, 5.52348)
 environment = SubResource("Environment_pyexv")
 
 [node name="player" parent="." instance=ExtResource("1_4axfq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.4172, 0, -1.82266)
+transform = Transform3D(0.0365014, -0.0558612, 0.997771, 0, 0.998436, 0.0558984, -0.999334, -0.00204037, 0.0364443, -43.8221, 2.74352, 5.96407)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -601,8 +602,8 @@ door_id = 4
 transform = Transform3D(2, 0, 0, 0, 0.05, 0, 0, 0, 2, 50.9649, 0.0282512, -37.4089)
 plate_nr = 4
 
-[node name="blood font model" parent="." instance=ExtResource("24_efxyo")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -60.4094, 0, 7.96368)
+[node name="Node3D" parent="." instance=ExtResource("25_m5kq8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -56.9013, -1.4677, 5.97073)
 
 [connection signal="kys" from="player" to="GameManager" method="player_death_by_trap"]
 [connection signal="interacted" from="interactable_sword" to="player" method="_on_interactable_sword_interacted"]
