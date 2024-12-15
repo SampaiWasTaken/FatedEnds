@@ -42,6 +42,8 @@ func _input(event: InputEvent) -> void:
 		CameraLook(MouseEvent)
 	if event.is_action_pressed("attack") and sword_equiped:
 		$CamContainer/AnimationPlayer.play("kys")
+	if event is InputEventMouseButton:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 # https://www.youtube.com/watch?v=O77xgrp5nOY used this tutorial for mouse movement
 func CameraLook(Movement: Vector2):
