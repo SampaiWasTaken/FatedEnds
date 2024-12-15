@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvblm3ppyx8kh"]
+
+[ext_resource type="Texture2D" uid="uid://csoafhma23tmy" path="res://Scenes/textures/wood1.png" id="1_t6ss1"]
+[ext_resource type="ArrayMesh" uid="uid://cynge2lgttt8k" path="res://Scenes/modDungeon/Crates_and_barrels_glb_Cube_007.res" id="2_afl0j"]
+[ext_resource type="FontFile" uid="uid://dc57wlbgxcgkf" path="res://Assets/Jacquard12-Regular.ttf" id="3_g8vpw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qsq56"]
+albedo_texture = ExtResource("1_t6ss1")
+
+[sub_resource type="BoxMesh" id="BoxMesh_7mrdw"]
+material = SubResource("StandardMaterial3D_qsq56")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.193548, 0, 0, 0, 1.14236, 0, 0, 0, 0.171763, 0, 0.603049, 0)
+mesh = SubResource("BoxMesh_7mrdw")
+
+[node name="CratesAndBarrelsGlbCube007" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.34019, 0, 0, 0, 0.289292, 1.05343, 0, -0.987127, 0.308724, 0.0360892, 0.954564, 0.681608)
+mesh = ExtResource("2_afl0j")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0420352, 1.10413, 0.11621)
+text = "Only the fallen 
+can bridge 
+the gap."
+font = ExtResource("3_g8vpw")

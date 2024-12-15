@@ -6,7 +6,7 @@ extends CharacterBody3D
 var wobble_timer: float = 0.0  
 var walking = false
 
-@export var sword_equiped:bool = true
+@export var sword_equiped:bool = false
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -26,7 +26,6 @@ var playingAudio = true
 signal kys
 
 func _ready() -> void:
-	sword_equiped  = true
 	if not sword_equiped:
 		$"CamContainer/arm/Low Poly Sword_003".visible = false
 	#cam.current = true

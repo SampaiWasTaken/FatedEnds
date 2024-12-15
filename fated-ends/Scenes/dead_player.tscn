@@ -11,10 +11,10 @@ size = Vector3(1, 0.517517, 2.23755)
 albedo_texture = ExtResource("2_cbr1n")
 
 [node name="Dying Backwards" instance=ExtResource("1_6tv0v")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("2_y21vl")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.16891)
 collision_mask = 2
 mass = 10000.0
 can_sleep = false
@@ -27,6 +27,7 @@ shape = SubResource("BoxShape3D_fi0q5")
 disabled = true
 
 [node name="Skeleton3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.16891)
 bones/0/position = Vector3(-0.167714, 0.871833, 0.00397694)
 bones/0/rotation = Quaternion(0.0220324, -0.0146556, -0.00741013, 0.999622)
 bones/1/rotation = Quaternion(-0.0579604, -0.00269563, 0.00358866, 0.998309)

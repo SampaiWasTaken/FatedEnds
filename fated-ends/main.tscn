@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dffai7cb8sehi"]
+[gd_scene load_steps=44 format=3 uid="uid://dffai7cb8sehi"]
 
 [ext_resource type="PackedScene" uid="uid://dncv1j7hufsuy" path="res://Scenes/Player/player.tscn" id="1_4axfq"]
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://dgao0tsentrvq" path="res://bareel2.tscn" id="29_7knvv"]
 [ext_resource type="ArrayMesh" uid="uid://1hytiltvw53f" path="res://Scenes/modDungeon/Crates_and_barrels_glb_Cube_001.res" id="30_01r5c"]
 [ext_resource type="ArrayMesh" uid="uid://0sv155boyhpc" path="res://Scenes/modDungeon/Crates_and_barrels_glb_Cube_002.res" id="31_yq2cs"]
+[ext_resource type="PackedScene" uid="uid://cvblm3ppyx8kh" path="res://sign.tscn" id="32_ffeh6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -116,7 +117,7 @@ data = PackedVector3Array(0.2402, 0.5526, -0.2126, -0.2402, 0.0553, -0.2126, -0.
 environment = SubResource("Environment_pyexv")
 
 [node name="player" parent="." instance=ExtResource("1_4axfq")]
-transform = Transform3D(0.0365014, -0.0558612, 0.997771, 0, 0.998436, 0.0558984, -0.999334, -0.00204037, 0.0364443, -43.8221, 2.74352, 5.96407)
+transform = Transform3D(0.0365014, -0.0558612, 0.997771, 0, 0.998436, 0.0558984, -0.999334, -0.00204037, 0.0364443, 0, 0, 0)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -256,7 +257,7 @@ fit_content = true
 scroll_active = false
 drag_and_drop_selection_enabled = false
 
-[node name="pressurePlate1" parent="." instance=ExtResource("13_emuuf")]
+[node name="pressurePlate1" parent="." groups=["plates"] instance=ExtResource("13_emuuf")]
 transform = Transform3D(2, 0, 0, 0, 0.1, 0, 0, 0, 2, 1.53784, 0.0616925, -19.4393)
 plate_nr = 1
 
@@ -525,6 +526,7 @@ volume_db = -5.0
 
 [node name="BGLoop" type="AudioStreamPlayer" parent="AudioPlayers"]
 stream = ExtResource("16_mdjkr")
+volume_db = -4.0
 autoplay = true
 
 [node name="DeathAudioPlayer" type="AudioStreamPlayer" parent="AudioPlayers"]
@@ -662,10 +664,6 @@ door_id = 3
 [node name="Door4" parent="Doors" instance=ExtResource("14_1hgjb")]
 transform = Transform3D(-3.0598e-07, 0, -7, 0, 4, 0, 7, 0, -3.0598e-07, -4.74379, 0, 6.06472)
 door_id = 4
-
-[node name="pressurePlate" parent="." instance=ExtResource("13_emuuf")]
-transform = Transform3D(2, 0, 0, 0, 0.05, 0, 0, 0, 2, 50.9649, 0.0282512, -37.4089)
-plate_nr = 4
 
 [node name="Node3D" parent="." instance=ExtResource("25_m5kq8")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -56.9013, -1.4677, 5.97073)
@@ -821,6 +819,16 @@ shape = SubResource("ConcavePolygonShape3D_yr4ak")
 
 [node name="Cube003" parent="Decoration" instance=ExtResource("14_ws2vy")]
 transform = Transform3D(0.976425, 0, 0, 0, 0.608827, 0, 0, 0, 0.962249, 40.9891, 0.91, 11.5059)
+
+[node name="pressurePlate2" parent="." groups=["plates"] instance=ExtResource("13_emuuf")]
+transform = Transform3D(2, 0, 0, 0, 0.138822, 0, 0, 0, 1.99768, 50.9708, -0.0147712, -38.6291)
+plate_nr = 4
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.0891, 3.80328, 5.97241)
+
+[node name="Node3D2" parent="." instance=ExtResource("32_ffeh6")]
+transform = Transform3D(-0.76392, 0, 0.645311, 0, 1, 0, -0.645311, 0, -0.76392, 45.127, -0.0270417, 11.228)
 
 [connection signal="kys" from="player" to="GameManager" method="player_death_by_trap"]
 [connection signal="interacted" from="interactable_sword" to="player" method="_on_interactable_sword_interacted"]

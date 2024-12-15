@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d22avdttpyh8n"]
+[gd_scene load_steps=5 format=3 uid="uid://d22avdttpyh8n"]
 
 [ext_resource type="FontFile" uid="uid://dc57wlbgxcgkf" path="res://Assets/Jacquard12-Regular.ttf" id="1_mbluu"]
 [ext_resource type="Script" path="res://Scripts/rich_text_label.gd" id="2_vxa7o"]
 [ext_resource type="PackedScene" uid="uid://dffai7cb8sehi" path="res://main.tscn" id="3_rviik"]
+[ext_resource type="AudioStream" uid="uid://dmgjefyplptvr" path="res://Assets/sounds/Ambience_MonstersBelly_00.wav" id="4_k763x"]
 
 [node name="Intro" type="CanvasLayer"]
 
@@ -30,3 +31,6 @@ drag_and_drop_selection_enabled = false
 script = ExtResource("2_vxa7o")
 text_label = NodePath(".")
 game_scene = ExtResource("3_rviik")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_k763x")

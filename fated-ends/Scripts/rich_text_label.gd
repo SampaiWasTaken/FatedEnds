@@ -3,7 +3,7 @@ extends Node
 @export var text_label: RichTextLabel
 @export var reveal_speed: float = 0.07
 @export var game_scene: PackedScene # Reference to the game scene
-
+var mainScene
 var full_text: String = """
 Gasping for air, trembling, and drenched in blood, you stumble to your feet in the aftermath of the battle. Against all odds, you survived the rogue mage’s last stand.
 Your companions weren’t so [color=red]fortunate[/color].
@@ -33,6 +33,10 @@ Yet the silence is deceptive, and the world itself seems to bend, unwilling to l
 
 Use WASD to walk.
 
+Hold Shift to sprint.
+
+Press Space to jump.
+
 Use E (e, this is super hard to read) to interact with objects.
 
 Use Left Click to tempt [color=red]Fate[/color].
@@ -42,8 +46,13 @@ Use Left Click to tempt [color=red]Fate[/color].
 var processed_text: Array = []
 var visible_text: String = ""
 var char_index: int = 0
-
+var bruh
 func _ready() -> void:
+	mainScene = preload("res://main.tscn")
+	bruh = mainScene.instantiate()
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	get_tree().create_timer(0.1).timeout
+	$"../AudioStreamPlayer".play()
 	preprocess_bbcode()
 	start_text_reveal()
 
@@ -95,4 +104,4 @@ func _continue_reveal():
 
 func start_game():
 	#var main_game_scene = game_scene.instantiate()
-	get_tree().change_scene_to_file("res://main.tscn")
+	get_tree().change_scene_to_packed(mainScene)
