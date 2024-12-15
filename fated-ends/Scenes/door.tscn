@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cwrr1q2b75w8y"]
 
 [ext_resource type="PackedScene" uid="uid://d10qd8gv4044x" path="res://Assets/WoodenDoor.blend" id="1_p6wnu"]
-[ext_resource type="Script" path="res://Scenes/door.gd" id="2_22u5j"]
+[ext_resource type="Script" path="res://Scripts/door.gd" id="2_22u5j"]
 [ext_resource type="Texture2D" uid="uid://0caenty18dka" path="res://Scenes/textures/WoodenDoor.png" id="3_7tqkc"]
 [ext_resource type="AudioStream" uid="uid://pnqga48x6yh3" path="res://Assets/sounds/sfx/stone_door.ogg" id="5_5vjh0"]
 

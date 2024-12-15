@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://da1lcj6udnmwb"]
 
 [ext_resource type="PackedScene" uid="uid://c5m6ffrrtach5" path="res://Scenes/trap.tscn" id="1_x0xwk"]
-[ext_resource type="Script" path="res://death_plane_maze.gd" id="2_8acx4"]
+[ext_resource type="Script" path="res://Scripts/death_plane_maze.gd" id="2_8acx4"]
 [ext_resource type="AudioStream" uid="uid://ce7fxunmhmkji" path="res://Assets/sounds/sfx/Trap_00.mp3" id="3_qo04v"]
 
 [node name="Origin" instance=ExtResource("1_x0xwk")]

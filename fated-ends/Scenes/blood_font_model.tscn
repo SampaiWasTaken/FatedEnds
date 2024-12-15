@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://om1tt8klh1pp"]
+
+[ext_resource type="PackedScene" uid="uid://ckma7y1o3mbm2" path="res://Scenes/blood font model.fbx" id="1_ghth8"]
+
+[node name="blood font model" instance=ExtResource("1_ghth8")]

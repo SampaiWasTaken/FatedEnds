@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b31166h01cxd8" path="res://Scenes/textures/Claimedwall2B.png" id="1_iohcx"]
 [ext_resource type="Texture2D" uid="uid://cyrpwlt11xclv" path="res://Scenes/textures/Claimedwall2_nor3.png" id="2_sc47p"]
-[ext_resource type="Script" path="res://unsafe_path.gd" id="3_vhcbm"]
-[ext_resource type="PackedScene" uid="uid://da1lcj6udnmwb" path="res://mazeTrapSpike.tscn" id="4_f6f1t"]
+[ext_resource type="Script" path="res://Scripts/unsafe_path.gd" id="3_vhcbm"]
+[ext_resource type="PackedScene" uid="uid://da1lcj6udnmwb" path="res://Scenes/mazeTrapSpike.tscn" id="4_f6f1t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p8nep"]
 albedo_texture = ExtResource("1_iohcx")
