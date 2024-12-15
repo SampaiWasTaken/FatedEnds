@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dffai7cb8sehi"]
+[gd_scene load_steps=34 format=3 uid="uid://dffai7cb8sehi"]
 
 [ext_resource type="PackedScene" uid="uid://dncv1j7hufsuy" path="res://Scenes/Player/player.tscn" id="1_4axfq"]
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
@@ -25,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://dysvdy2mxmts" path="res://Scenes/MazeTrap.tscn" id="22_hjwfv"]
 [ext_resource type="PackedScene" uid="uid://dqikjbstss5mh" path="res://Scenes/crates_puzzle_hint.tscn" id="23_nwtif"]
 [ext_resource type="PackedScene" uid="uid://om1tt8klh1pp" path="res://Scenes/blood_font_model.tscn" id="24_efxyo"]
-[ext_resource type="ArrayMesh" uid="uid://cnu357dvo8r1w" path="res://Scenes/modDungeon/Cube_020.res" id="25_yi4rv"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -44,7 +43,6 @@ tonemap_mode = 2
 glow_enabled = true
 glow_normalized = true
 glow_blend_mode = 0
-fog_enabled = true
 fog_light_color = Color(0.32856, 0.35778, 0.40371, 1)
 fog_light_energy = 2.13
 volumetric_fog_density = 0.1
@@ -130,7 +128,7 @@ corpse_scene = ExtResource("5_l8je5")
 
 [node name="TimerManager" type="Node" parent="."]
 script = ExtResource("5_luvpe")
-timer_duration = 300.0
+timer_duration = 400.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -605,10 +603,6 @@ plate_nr = 4
 
 [node name="blood font model" parent="." instance=ExtResource("24_efxyo")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -60.4094, 0, 7.96368)
-
-[node name="Cube020" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -49.8102, -0.418654, 12.6401)
-mesh = ExtResource("25_yi4rv")
 
 [connection signal="kys" from="player" to="GameManager" method="player_death_by_trap"]
 [connection signal="interacted" from="interactable_sword" to="player" method="_on_interactable_sword_interacted"]

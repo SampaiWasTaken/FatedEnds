@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://b6rtdeel2j5y8"]
+
+[ext_resource type="ArrayMesh" uid="uid://b71cd6gooe6rx" path="res://Scenes/modDungeon/Cube_003.res" id="1_dhx1c"]
+[ext_resource type="ArrayMesh" uid="uid://cnu357dvo8r1w" path="res://Scenes/modDungeon/Cube_020.res" id="2_62jda"]
+[ext_resource type="ArrayMesh" uid="uid://b3ujnng23ugar" path="res://Scenes/modDungeon/Cube_006.res" id="3_ffgb2"]
+[ext_resource type="ArrayMesh" uid="uid://cynkxa1b1kvcb" path="res://Scenes/modDungeon/Plane_005.res" id="4_04t0g"]
+[ext_resource type="ArrayMesh" uid="uid://bjx6u7hh0cekk" path="res://Scenes/modDungeon/Plane_006.res" id="5_yaj41"]
+[ext_resource type="ArrayMesh" uid="uid://2fwhdxjc86r6" path="res://Scenes/modDungeon/Plane_015.res" id="6_y1402"]
+[ext_resource type="ArrayMesh" uid="uid://bnghye3duqg1t" path="res://Scenes/modDungeon/Plane_002.res" id="7_2wak6"]
+[ext_resource type="PackedScene" uid="uid://om1tt8klh1pp" path="res://Scenes/blood_font_model.tscn" id="8_c7vvk"]
+[ext_resource type="Texture2D" uid="uid://txe3g3lahu0h" path="res://Scenes/Blood Stone CH16.png" id="9_tfxes"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7752w"]
+albedo_texture = ExtResource("9_tfxes")
+emission_enabled = true
+emission = Color(0.242311, 1.61689e-06, 9.08468e-07, 1)
+emission_energy_multiplier = 0.13
+emission_texture = ExtResource("9_tfxes")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ql8a2"]
+material = SubResource("StandardMaterial3D_7752w")
+size = Vector2(8.5, 7.7)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Cube003" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.59176, 0, 1.77935)
+mesh = ExtResource("1_dhx1c")
+
+[node name="Cube020" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.928195, 0)
+mesh = ExtResource("2_62jda")
+
+[node name="Cube006" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 4.27695, -0.0842092, -1.90504)
+mesh = ExtResource("3_ffgb2")
+
+[node name="Cube007" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29877, -0.0842092, -1.90504)
+mesh = ExtResource("3_ffgb2")
+
+[node name="Cube008" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.27676, -0.0842092, -5.64904)
+mesh = ExtResource("3_ffgb2")
+
+[node name="Cube009" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.27676, -0.0842092, -9.36568)
+mesh = ExtResource("3_ffgb2")
+
+[node name="Cube010" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.29674, -0.0842092, -5.64904)
+mesh = ExtResource("3_ffgb2")
+
+[node name="Cube011" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.29674, -0.0842092, -9.36568)
+mesh = ExtResource("3_ffgb2")
+
+[node name="Plane005" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.8, -2.83731, 2.92, -3.34734)
+mesh = ExtResource("4_04t0g")
+
+[node name="Plane006" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.8, 2.8602, 2.92, -3.32543)
+mesh = ExtResource("5_yaj41")
+
+[node name="Plane015" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.8, 2.86407, 2.93995, -8.11537)
+mesh = ExtResource("6_y1402")
+
+[node name="Plane016" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8, 0, 0, 0, 1, 0, 0, 0, 0.8, -2.85058, 2.93995, -8.12608)
+mesh = ExtResource("6_y1402")
+
+[node name="Plane002" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.92, -3.742)
+mesh = ExtResource("7_2wak6")
+
+[node name="Plane003" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.92, -7.745)
+mesh = ExtResource("7_2wak6")
+
+[node name="blood font model" parent="." instance=ExtResource("8_c7vvk")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 0.013, 2.92, -8.32517)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9, -5.88368)
+mesh = SubResource("PlaneMesh_ql8a2")
