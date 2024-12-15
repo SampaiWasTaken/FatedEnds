@@ -2,6 +2,11 @@ extends Node
 
 @export var player: CharacterBody3D  
 @export var corpse_scene: PackedScene  
+var endingLabel: RichTextLabel
+var endingControl: Control
+
+var storyConcluded = false
+var storyCounter = 0
 
 var onEnter = "You realize that this is the end of the road for you. Do what must be done and pay the price for your defiance."
 
@@ -28,11 +33,18 @@ var randomizedStoryBeats = ["You're stuck here, forever.",
 "You’ve cheated death, but now it cheats you.",
 "You are a prisoner of your own defiance."
 ]
+
 var respawnPoint:Vector3 = Vector3(0, 0, 0)
 var player_respawn_rotation:Vector3 = Vector3.ZERO
 var inFinalRoom:bool = false 
+var message_timer: Timer
 
 func _ready() -> void:
+	endingControl = $"../CanvasLayer/Ending"
+	endingLabel = $"../CanvasLayer/Ending/Label"
+	message_timer = Timer.new()
+	add_child(message_timer)
+	
 	for trap in get_tree().get_nodes_in_group("trap"):
 		trap.connect("player_death", player_death_by_trap)
 
@@ -42,11 +54,23 @@ func _process(delta: float) -> void:
 		player_death_by_trap()
 
 func player_death_by_trap():
+	if not inFinalRoom:
+		$"../TimerManager".timer -= 10
 	$"../AudioPlayers/DeathAudioPlayer".play()
 	$"../CanvasLayer/CanvasAnimPlayer".play("fade_black")
-	$"../TimerManager".timer -= 10
 	spawn_corpse()
 	reset_player_position()  
+	if inFinalRoom:
+		if storyCounter <= 3:
+			endingLabel.text = "[center]%s[/center]" % storyBeats[storyCounter]
+			storyCounter+=1
+		else:
+			endingLabel.text = "[center]%s[/center]" % randomizedStoryBeats.pick_random()
+		endingControl.visible = true
+		message_timer.start(4.0)
+		await message_timer.timeout
+		endingControl.visible = false
+		
 
 func fated_death():
 	get_tree().reload_current_scene()
@@ -64,7 +88,12 @@ func reset_player_position():
 	player.rotation = player_respawn_rotation
 	player.transform.origin = respawnPoint
 
-func finalRoomTrigger(newSpawnpoint:Vector3, newplayer_respawn_rotation:Vector3):
+func finalRoomTrigger(newSpawnpoint:Vector3, newplayer_respawn_rotation:Vector3):	
 	respawnPoint = newSpawnpoint
 	player_respawn_rotation = newplayer_respawn_rotation
 	inFinalRoom = true
+	endingLabel.text = "[center]%s[/center]" % onEnter
+	endingControl.visible = true
+	message_timer.start(6.0)
+	await message_timer.timeout
+	endingControl.visible = false
