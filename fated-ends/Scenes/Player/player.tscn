@@ -307,3 +307,5 @@ fov = 90.1
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_cuyks")
+
+[connection signal="animation_finished" from="CamContainer/AnimationPlayer" to="CamContainer/Camera3D/RayCast3D" method="_on_animation_player_animation_finished"]

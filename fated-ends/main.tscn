@@ -19,7 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://c14u1xioipsc5" path="res://Assets/sounds/sfx/death.wav" id="17_nves2"]
 [ext_resource type="PackedScene" uid="uid://cuxevnk4c6ns8" path="res://Scenes/untitled.tscn" id="18_7t6wx"]
 [ext_resource type="PackedScene" uid="uid://dkw8ddv7euer1" path="res://Scenes/moveable_crate.tscn" id="19_24ssg"]
-[ext_resource type="PackedScene" uid="uid://ddsdg58radnl6" path="res://Scenes/torch.tscn" id="19_qb56k"]
+[ext_resource type="PackedScene" path="res://Scenes/torch.tscn" id="19_qb56k"]
 [ext_resource type="PackedScene" uid="uid://cvs17fs0yysbq" path="res://resources/sword/interactable_sword.tscn" id="20_13jfc"]
 [ext_resource type="AudioStream" uid="uid://utvfpmag805g" path="res://Assets/sounds/sfx/earthquake.wav" id="21_7682g"]
 [ext_resource type="PackedScene" uid="uid://dysvdy2mxmts" path="res://Scenes/MazeTrap.tscn" id="22_hjwfv"]

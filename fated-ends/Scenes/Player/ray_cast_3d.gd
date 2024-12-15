@@ -1,5 +1,6 @@
 extends RayCast3D
 
+var interacting: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,7 +15,8 @@ func _process(delta: float) -> void:
 		var detected = get_collider()
 		if detected is Interactable:
 			interactlabel.text= detected.get_prompt()
-			if Input.is_action_just_pressed(detected.promt_action):
+			if Input.is_action_just_pressed(detected.promt_action) and not interacting:
+				interacting = true
 				detected.interact(owner)
 				$"../../AnimationPlayer".play(detected.animation_action)
 		else:
@@ -22,3 +24,10 @@ func _process(delta: float) -> void:
 	else:
 		interactlabel.text= ""
 	pass
+
+
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	interacting = false
+	pass # Replace with function body.
