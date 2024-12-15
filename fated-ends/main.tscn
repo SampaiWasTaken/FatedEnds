@@ -22,11 +22,13 @@
 [ext_resource type="PackedScene" uid="uid://cvs17fs0yysbq" path="res://resources/sword/interactable_sword.tscn" id="20_13jfc"]
 [ext_resource type="AudioStream" uid="uid://utvfpmag805g" path="res://Assets/sounds/sfx/earthquake.wav" id="21_7682g"]
 [ext_resource type="PackedScene" uid="uid://dysvdy2mxmts" path="res://MazeTrap.tscn" id="22_hjwfv"]
-[ext_resource type="PackedScene" path="res://Scenes/crates_puzzle_hint.tscn" id="23_nwtif"]
+[ext_resource type="PackedScene" uid="uid://dqikjbstss5mh" path="res://Scenes/crates_puzzle_hint.tscn" id="23_nwtif"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sky_energy_multiplier = 0.3
 ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+sun_curve = 1e-05
 
 [sub_resource type="Sky" id="Sky_3neoc"]
 sky_material = SubResource("ProceduralSkyMaterial_06ib8")
@@ -34,10 +36,14 @@ sky_material = SubResource("ProceduralSkyMaterial_06ib8")
 [sub_resource type="Environment" id="Environment_pyexv"]
 background_mode = 2
 sky = SubResource("Sky_3neoc")
+ambient_light_sky_contribution = 0.56
 tonemap_mode = 2
 glow_enabled = true
 glow_normalized = true
 glow_blend_mode = 0
+fog_enabled = true
+fog_light_color = Color(0.32856, 0.35778, 0.40371, 1)
+fog_light_energy = 4.8
 volumetric_fog_density = 0.1
 
 [sub_resource type="Animation" id="Animation_81gnw"]
@@ -493,7 +499,7 @@ transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 
 transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 6.95913, 2.4503, 8.82407)
 
 [node name="moveable_crate19" parent="." instance=ExtResource("19_24ssg")]
-transform = Transform3D(0.85904, 0, 0.511908, 0, 1, 0, -0.511908, 0, 0.85904, 10.09, 2.20869, 13.7187)
+transform = Transform3D(0.85904, 0, 0.511908, 0, 1, 0, -0.511908, 0, 0.85904, 10.09, 2.20869, 14.4341)
 
 [node name="moveable_crate20" parent="." instance=ExtResource("19_24ssg")]
 transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 10.558, 1.90689, 7.84619)
