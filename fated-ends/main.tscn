@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://dffai7cb8sehi"]
+[gd_scene load_steps=43 format=3 uid="uid://dffai7cb8sehi"]
 
 [ext_resource type="PackedScene" uid="uid://dncv1j7hufsuy" path="res://Scenes/Player/player.tscn" id="1_4axfq"]
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
@@ -26,6 +26,11 @@
 [ext_resource type="PackedScene" uid="uid://dqikjbstss5mh" path="res://Scenes/crates_puzzle_hint.tscn" id="23_nwtif"]
 [ext_resource type="PackedScene" uid="uid://b6rtdeel2j5y8" path="res://podium.tscn" id="25_m5kq8"]
 [ext_resource type="Script" path="res://Scripts/FinalRoomTriggerArea3d.gd" id="26_nygjm"]
+[ext_resource type="PackedScene" uid="uid://blbib4a6gqdwb" path="res://pillar.tscn" id="27_fwktd"]
+[ext_resource type="PackedScene" uid="uid://c6kfhl7qr8epa" path="res://barrel1.tscn" id="28_gb7qd"]
+[ext_resource type="PackedScene" uid="uid://dgao0tsentrvq" path="res://bareel2.tscn" id="29_7knvv"]
+[ext_resource type="ArrayMesh" uid="uid://1hytiltvw53f" path="res://Scenes/modDungeon/Crates_and_barrels_glb_Cube_001.res" id="30_01r5c"]
+[ext_resource type="ArrayMesh" uid="uid://0sv155boyhpc" path="res://Scenes/modDungeon/Crates_and_barrels_glb_Cube_002.res" id="31_yq2cs"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -98,6 +103,12 @@ size = Vector3(1, 6.12237, 5.52348)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ud3kk"]
 size = Vector3(1, 5.9585, 8.90027)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yr4ak"]
+data = PackedVector3Array(0.2506, 0.3189, -0.223, -0.2506, 0.0731, -0.223, -0.2506, 0.3189, -0.223, 0.2506, 0.3189, -0.223, 0.2506, 0.0731, -0.223, -0.2506, 0.0731, -0.223, 0.2763, 0, 0.3039, -0.2763, 0.3189, 0.3039, 0.2763, 0.3189, 0.3039, 0.2763, 0, 0.3039, -0.2763, 0, 0.3039, -0.2763, 0.3189, 0.3039, -0.2763, 0, 0.3039, -0.2763, 0.3189, -0.2487, -0.2763, 0.3189, 0.3039, -0.2763, 0, 0.3039, -0.2763, 0, -0.2487, -0.2763, 0.3189, -0.2487, -0.2763, 0, -0.2487, 0.2763, 0, 0.3039, 0.2763, 0, -0.2487, -0.2763, 0, -0.2487, -0.2763, 0, 0.3039, 0.2763, 0, 0.3039, 0.2763, 0, -0.2487, 0.2763, 0.3189, 0.3039, 0.2763, 0.3189, -0.2487, 0.2763, 0, -0.2487, 0.2763, 0, 0.3039, 0.2763, 0.3189, 0.3039, -0.2763, 0, -0.2487, 0.2763, 0.3189, -0.2487, -0.2763, 0.3189, -0.2487, -0.2763, 0, -0.2487, 0.2763, 0, -0.2487, 0.2763, 0.3189, -0.2487, 0.2506, 0.3189, 0.2783, -0.2763, 0.3189, 0.3039, -0.2506, 0.3189, 0.2783, 0.2506, 0.3189, 0.2783, 0.2763, 0.3189, 0.3039, -0.2763, 0.3189, 0.3039, 0.2506, 0.3189, -0.223, 0.2763, 0.3189, 0.3039, 0.2506, 0.3189, 0.2783, 0.2506, 0.3189, -0.223, 0.2763, 0.3189, -0.2487, 0.2763, 0.3189, 0.3039, -0.2506, 0.3189, 0.2783, -0.2763, 0.3189, -0.2487, -0.2506, 0.3189, -0.223, -0.2506, 0.3189, 0.2783, -0.2763, 0.3189, 0.3039, -0.2763, 0.3189, -0.2487, -0.2506, 0.3189, -0.223, 0.2763, 0.3189, -0.2487, 0.2506, 0.3189, -0.223, -0.2506, 0.3189, -0.223, -0.2763, 0.3189, -0.2487, 0.2763, 0.3189, -0.2487, 0.2506, 0.0731, -0.223, -0.2506, 0.0731, 0.2783, -0.2506, 0.0731, -0.223, 0.2506, 0.0731, -0.223, 0.2506, 0.0731, 0.2783, -0.2506, 0.0731, 0.2783, 0.2506, 0.3189, 0.2783, 0.2506, 0.0731, -0.223, 0.2506, 0.3189, -0.223, 0.2506, 0.3189, 0.2783, 0.2506, 0.0731, 0.2783, 0.2506, 0.0731, -0.223, -0.2506, 0.3189, -0.223, -0.2506, 0.0731, 0.2783, -0.2506, 0.3189, 0.2783, -0.2506, 0.3189, -0.223, -0.2506, 0.0731, -0.223, -0.2506, 0.0731, 0.2783, -0.2506, 0.3189, 0.2783, 0.2506, 0.0731, 0.2783, 0.2506, 0.3189, 0.2783, -0.2506, 0.3189, 0.2783, -0.2506, 0.0731, 0.2783, 0.2506, 0.0731, 0.2783)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_rb3mi"]
+data = PackedVector3Array(0.2402, 0.5526, -0.2126, -0.2402, 0.0553, -0.2126, -0.2402, 0.5526, -0.2126, 0.2402, 0.5526, -0.2126, 0.2402, 0.0553, -0.2126, -0.2402, 0.0553, -0.2126, 0.2763, 0, 0.3039, -0.2763, 0.5526, 0.3039, 0.2763, 0.5526, 0.3039, 0.2763, 0, 0.3039, -0.2763, 0, 0.3039, -0.2763, 0.5526, 0.3039, -0.2763, 0, 0.3039, -0.2763, 0.5526, -0.2487, -0.2763, 0.5526, 0.3039, -0.2763, 0, 0.3039, -0.2763, 0, -0.2487, -0.2763, 0.5526, -0.2487, -0.2763, 0, -0.2487, 0.2763, 0, 0.3039, 0.2763, 0, -0.2487, -0.2763, 0, -0.2487, -0.2763, 0, 0.3039, 0.2763, 0, 0.3039, 0.2763, 0, -0.2487, 0.2763, 0.5526, 0.3039, 0.2763, 0.5526, -0.2487, 0.2763, 0, -0.2487, 0.2763, 0, 0.3039, 0.2763, 0.5526, 0.3039, -0.2763, 0, -0.2487, 0.2763, 0.5526, -0.2487, -0.2763, 0.5526, -0.2487, -0.2763, 0, -0.2487, 0.2763, 0, -0.2487, 0.2763, 0.5526, -0.2487, 0.2402, 0.5526, 0.2679, -0.2763, 0.5526, 0.3039, -0.2402, 0.5526, 0.2679, 0.2402, 0.5526, 0.2679, 0.2763, 0.5526, 0.3039, -0.2763, 0.5526, 0.3039, 0.2402, 0.5526, -0.2126, 0.2763, 0.5526, 0.3039, 0.2402, 0.5526, 0.2679, 0.2402, 0.5526, -0.2126, 0.2763, 0.5526, -0.2487, 0.2763, 0.5526, 0.3039, -0.2402, 0.5526, 0.2679, -0.2763, 0.5526, -0.2487, -0.2402, 0.5526, -0.2126, -0.2402, 0.5526, 0.2679, -0.2763, 0.5526, 0.3039, -0.2763, 0.5526, -0.2487, -0.2402, 0.5526, -0.2126, 0.2763, 0.5526, -0.2487, 0.2402, 0.5526, -0.2126, -0.2402, 0.5526, -0.2126, -0.2763, 0.5526, -0.2487, 0.2763, 0.5526, -0.2487, 0.2402, 0.0553, -0.2126, -0.2402, 0.0553, 0.2679, -0.2402, 0.0553, -0.2126, 0.2402, 0.0553, -0.2126, 0.2402, 0.0553, 0.2679, -0.2402, 0.0553, 0.2679, 0.2402, 0.5526, 0.2679, 0.2402, 0.0553, -0.2126, 0.2402, 0.5526, -0.2126, 0.2402, 0.5526, 0.2679, 0.2402, 0.0553, 0.2679, 0.2402, 0.0553, -0.2126, -0.2402, 0.5526, -0.2126, -0.2402, 0.0553, 0.2679, -0.2402, 0.5526, 0.2679, -0.2402, 0.5526, -0.2126, -0.2402, 0.0553, -0.2126, -0.2402, 0.0553, 0.2679, -0.2402, 0.5526, 0.2679, 0.2402, 0.0553, 0.2679, 0.2402, 0.5526, 0.2679, -0.2402, 0.5526, 0.2679, -0.2402, 0.0553, 0.2679, 0.2402, 0.0553, 0.2679)
 
 [node name="Node3D" type="Node3D"]
 
@@ -273,16 +284,16 @@ shadow_bias = 0.0
 spot_angle = 82.45
 
 [node name="interactable_sword" parent="." instance=ExtResource("20_13jfc")]
-transform = Transform3D(1.30476, -0.740002, -3.23465e-08, 0, -6.55671e-08, 1.5, -0.740002, -1.30476, -5.70329e-08, 1.40611, 0.0970406, -39.9218)
+transform = Transform3D(1.30476, -0.740002, -3.23465e-08, 0, -6.55671e-08, 1.5, -0.740002, -1.30476, -5.70329e-08, 1.46637, 0.608515, -39.9218)
 
 [node name="Torches" type="Node3D" parent="."]
 
 [node name="Torch" parent="Torches" instance=ExtResource("19_qb56k")]
-transform = Transform3D(0.15457, 0, 0, 0, 0.708735, -0.0594992, 0, 0.357325, 0.118013, 9.74568, 2.92073, -19.8038)
+transform = Transform3D(0.15457, 0, 0, 0, 0.616947, -0.0831501, 0, 0.499362, 0.102729, 9.74568, 2.92073, -19.824)
 skeleton = NodePath("../..")
 
 [node name="Torch2" parent="Torches" instance=ExtResource("19_qb56k")]
-transform = Transform3D(0.15457, 0, 0, 0, 0.708735, -0.0594992, 0, 0.357325, 0.118013, 18.1007, 2.92073, -19.7604)
+transform = Transform3D(0.15457, 0, 0, 0, 0.567292, -0.0924356, 0, 0.555127, 0.094461, 18.1007, 2.92073, -19.7806)
 skeleton = NodePath("../..")
 
 [node name="Torch3" parent="Torches" instance=ExtResource("19_qb56k")]
@@ -361,6 +372,22 @@ transform = Transform3D(0.122527, 0.43951, 0, -0.0818574, 0.657873, 0, 0, 0, 0.1
 
 [node name="Node3D11" parent="Torches" instance=ExtResource("19_qb56k")]
 transform = Transform3D(0.124315, -0.424786, 0, 0.0791151, 0.667475, 0, 0, 0, 0.15384, 61.919, 2.25797, -2.28072)
+
+[node name="Cube015" parent="Torches" instance=ExtResource("14_ws2vy")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -36.5129, 0.758356, 25.905)
+skeleton = NodePath("../..")
+
+[node name="Cube016" parent="Torches" instance=ExtResource("14_ws2vy")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -36.5129, 0.758356, -13.1085)
+skeleton = NodePath("../..")
+
+[node name="Cube017" parent="Torches" instance=ExtResource("14_ws2vy")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -65.5222, 0.758356, 25.905)
+skeleton = NodePath("../..")
+
+[node name="Cube018" parent="Torches" instance=ExtResource("14_ws2vy")]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0, 0, 0, 1, -65.5056, 0.758356, -13.1085)
+skeleton = NodePath("../..")
 
 [node name="Spikes" type="Node3D" parent="."]
 
@@ -556,7 +583,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2258, 1.99049, 11.5476)
 transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 8.10321, 2.01935, 10.1972)
 
 [node name="moveable_crate18" parent="Crates" instance=ExtResource("19_24ssg")]
-transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 6.95913, 2.4503, 8.82407)
+transform = Transform3D(0.970704, 0, -0.240279, 0, 1, 0, 0.240279, 0, 0.970704, 6.95913, 1.8725, 8.82407)
 
 [node name="moveable_crate19" parent="Crates" instance=ExtResource("19_24ssg")]
 transform = Transform3D(0.85904, 0, 0.511908, 0, 1, 0, -0.511908, 0, 0.85904, 10.09, 2.20869, 14.4341)
@@ -615,6 +642,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.5669, -2.85726, 16.845)
 [node name="cratesPuzzleHint" parent="Crates" instance=ExtResource("23_nwtif")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.90568, 0.860677, 14.5086)
 
+[node name="moveable_crate26" parent="Crates" instance=ExtResource("19_24ssg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.8669, 0.54576, 13.5849)
+
 [node name="Doors" type="Node3D" parent="."]
 
 [node name="Door2" parent="Doors" instance=ExtResource("14_1hgjb")]
@@ -652,6 +682,145 @@ shape = SubResource("BoxShape3D_ud3kk")
 
 [node name="newSpawnPoint" type="Node3D" parent="Area3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34.8405, 0.937276, -0.399238)
+
+[node name="Decoration" type="Node3D" parent="."]
+
+[node name="Node3D2" parent="Decoration" instance=ExtResource("27_fwktd")]
+transform = Transform3D(1.5, 0, 0, 0, 1.65, 0, 0, 0, 1.5, -63.9712, 2.48671, 15.5427)
+
+[node name="Node3D3" parent="Decoration" instance=ExtResource("27_fwktd")]
+transform = Transform3D(1.5, 0, 0, 0, 1.65, 0, 0, 0, 1.5, -55.846, 2.48671, 15.5427)
+
+[node name="Node3D4" parent="Decoration" instance=ExtResource("27_fwktd")]
+transform = Transform3D(1.5, 0, 0, 0, 1.65, 0, 0, 0, 1.5, -48.1402, 2.48671, 15.5427)
+
+[node name="Node3D5" parent="Decoration" instance=ExtResource("27_fwktd")]
+transform = Transform3D(1.5, 0, 0, 0, 1.65, 0, 0, 0, 1.5, -40.015, 2.48671, 15.5427)
+
+[node name="Node3D6" parent="Decoration" instance=ExtResource("27_fwktd")]
+transform = Transform3D(1.5, 0, 0, 0, 1.65, 0, 0, 0, 1.5, -63.9712, 2.48671, -2.66691)
+
+[node name="Node3D7" parent="Decoration" instance=ExtResource("27_fwktd")]
+transform = Transform3D(1.5, 0, 0, 0, 1.65, 0, 0, 0, 1.5, -55.846, 2.48671, -2.66691)
+
+[node name="Node3D8" parent="Decoration" instance=ExtResource("27_fwktd")]
+transform = Transform3D(1.5, 0, 0, 0, 1.65, 0, 0, 0, 1.5, -48.1402, 2.48671, -2.66691)
+
+[node name="Node3D9" parent="Decoration" instance=ExtResource("27_fwktd")]
+transform = Transform3D(1.5, 0, 0, 0, 1.65, 0, 0, 0, 1.5, -40.015, 2.48671, -2.66691)
+
+[node name="barrel1" parent="Decoration" instance=ExtResource("28_gb7qd")]
+transform = Transform3D(1.04691, 0, -1.07423, 0, 1.5, 0, 1.07423, 0, 1.04691, -41.594, 0, 24.217)
+skeleton = NodePath("../..")
+
+[node name="barrel2" parent="Decoration" instance=ExtResource("29_7knvv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -42.8, 0, 24.353)
+skeleton = NodePath("../..")
+
+[node name="boxThing" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(1.42116, 0, 0.479903, 0, 1.5, 0, -0.479903, 0, 1.42116, -43.8471, 0, 24.5943)
+mesh = ExtResource("30_01r5c")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decoration/boxThing"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decoration/boxThing/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yr4ak")
+
+[node name="barrel3" parent="Decoration" instance=ExtResource("28_gb7qd")]
+transform = Transform3D(1.04691, 0, -1.07423, 0, 1.5, 0, 1.07423, 0, 1.04691, -48.9256, 0, -13.0629)
+skeleton = NodePath("../..")
+
+[node name="barrel4" parent="Decoration" instance=ExtResource("29_7knvv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -50.1316, 0, -12.9269)
+skeleton = NodePath("../..")
+
+[node name="barrel5" parent="Decoration" instance=ExtResource("28_gb7qd")]
+transform = Transform3D(1.28567, -0.0263526, 0.772249, 0, 1.49913, 0.0511569, -0.772698, -0.0438471, 1.28492, -2.81412, 0, -7.8563)
+skeleton = NodePath("../..")
+
+[node name="barrel6" parent="Decoration" instance=ExtResource("29_7knvv")]
+transform = Transform3D(1.28567, -0.0263526, 0.772249, 0, 1.49913, 0.0511569, -0.772698, -0.0438471, 1.28492, -2.81412, 0, -6.07296)
+skeleton = NodePath("../..")
+
+[node name="barrel7" parent="Decoration" instance=ExtResource("28_gb7qd")]
+transform = Transform3D(0.0904154, -0.0510639, 1.4964, -9.55477e-10, 1.49913, 0.0511569, -1.49727, -0.00308358, 0.0903628, -2.81412, 0, -5.00812)
+skeleton = NodePath("../..")
+
+[node name="boxThing2" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -1.96637, 0, -6.85579)
+mesh = ExtResource("30_01r5c")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decoration/boxThing2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decoration/boxThing2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yr4ak")
+
+[node name="CratesAndBarrelsGlbCube002" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(0.91602, 0, -0.401133, 0, 1, 0, 0.401133, 0, 0.91602, 24.4457, 0, -3.28619)
+mesh = ExtResource("31_yq2cs")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decoration/CratesAndBarrelsGlbCube002"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decoration/CratesAndBarrelsGlbCube002/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rb3mi")
+
+[node name="barrel8" parent="Decoration" instance=ExtResource("28_gb7qd")]
+transform = Transform3D(1.15183, -0.0327702, 0.960315, -6.18653e-10, 1.49913, 0.0511569, -0.960874, -0.0392828, 1.15116, 25.7994, 0, -2.79872)
+skeleton = NodePath("../..")
+
+[node name="boxThing3" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(1.02856, 0, -1.09182, 0, 1.5, 0, 1.09182, 0, 1.02856, 27.7256, 0, -3.44862)
+mesh = ExtResource("30_01r5c")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decoration/boxThing3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decoration/boxThing3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yr4ak")
+
+[node name="barrel9" parent="Decoration" instance=ExtResource("29_7knvv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 15.4468, 0, -42.2534)
+skeleton = NodePath("../..")
+
+[node name="boxThing4" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 14.1054, 0, -42.8531)
+mesh = ExtResource("30_01r5c")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decoration/boxThing4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decoration/boxThing4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yr4ak")
+
+[node name="CratesAndBarrelsGlbCube003" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(0.551777, 0, 0.833992, 0, 1, 0, -0.833992, 0, 0.551777, 14.9088, 0, -43.1729)
+mesh = ExtResource("31_yq2cs")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decoration/CratesAndBarrelsGlbCube003"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decoration/CratesAndBarrelsGlbCube003/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_rb3mi")
+
+[node name="barrel10" parent="Decoration" instance=ExtResource("28_gb7qd")]
+transform = Transform3D(1.48253, 0, -0.228289, 0, 1.5, 0, 0.228289, 0, 1.48253, 13.0583, 0, -42.7709)
+skeleton = NodePath("../..")
+
+[node name="boxThing5" type="MeshInstance3D" parent="Decoration"]
+transform = Transform3D(-3.01992e-07, 1.31134e-07, -1.5, -3.49691e-07, -1.5, -1.31134e-07, -4, 1.31134e-07, 1.13247e-07, 1.34307, 0.553719, -39.9943)
+mesh = ExtResource("30_01r5c")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Decoration/boxThing5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Decoration/boxThing5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yr4ak")
+
+[node name="Cube003" parent="Decoration" instance=ExtResource("14_ws2vy")]
+transform = Transform3D(0.976425, 0, 0, 0, 0.608827, 0, 0, 0, 0.962249, 40.9891, 0.91, 11.5059)
 
 [connection signal="kys" from="player" to="GameManager" method="player_death_by_trap"]
 [connection signal="interacted" from="interactable_sword" to="player" method="_on_interactable_sword_interacted"]
