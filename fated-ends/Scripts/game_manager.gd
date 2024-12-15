@@ -3,6 +3,32 @@ extends Node
 @export var player: CharacterBody3D  
 @export var corpse_scene: PackedScene  
 
+var onEnter = "You realize that this is the end of the road for you. Do what must be done and pay the price for your defiance."
+
+var storyBeats = ["It seems your feeble flesh clings to life still. Perhaps the rite was more powerful than you had envisioned.",
+"Try as you might, you won't be claimed...",
+"Not today, not any day. This is the punishment for your hubris.",
+"Fate is a cruel mistress indeed."]
+
+var randomizedStoryBeats = ["You're stuck here, forever.", 
+"Your end is none at all.",
+"The cycle binds you tighter with each step.",
+"The room remains, and so do you.",
+"Sacrifice is meaningless when there’s nothing left to lose.",
+"The cake is a lie.",
+"This punishment is the only certainty you have left.",
+"Your actions echo, but the walls do not listen.",
+"Another step, another fall, another eternity.",
+"You are trapped within your own choices.",
+"The room watches, unfeeling, as you crumble.",
+"The light you seek does not exist here.",
+"Your existence is a loop, unbroken and unbreakable.",
+"This is all there is, this is all there will ever be.",
+"The room will outlast you, and you will never leave.",
+"You’ve cheated death, but now it cheats you.",
+"You are a prisoner of your own defiance."
+]
+
 func _ready() -> void:
 	for trap in get_tree().get_nodes_in_group("trap"):
 		trap.connect("player_death", player_death_by_trap)

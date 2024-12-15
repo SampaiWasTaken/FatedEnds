@@ -12,7 +12,8 @@ A shadowed unease grips your soul, as if you’re a pawn in a game whose rules h
 
 You were [color=red]meant[/color] to die here.
 
-With his final breath, the mage cursed you—not with death, but with a cruel reprieve. You remain untouched by death’s hand… for now.
+In a moment of desperate resolve, you invoked a forbidden rite—not to claim victory, but to endure. You gave up the finality of death.
+You remain untouched by death’s hand… for now.
 
 Yet the silence is deceptive, and the world itself seems to bend, unwilling to let you escape the [color=red]reckoning[/color] that’s long been overdue.
 
@@ -34,7 +35,7 @@ Use WASD to walk.
 
 Use E (e, this is super hard to read) to interact with objects.
 
-Use Left Click to tempt [color=red]fate[/color].
+Use Left Click to tempt [color=red]Fate[/color].
 
 """
 
