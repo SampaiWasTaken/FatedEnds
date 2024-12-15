@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dffai7cb8sehi"]
+[gd_scene load_steps=36 format=3 uid="uid://dffai7cb8sehi"]
 
 [ext_resource type="PackedScene" uid="uid://dncv1j7hufsuy" path="res://Scenes/Player/player.tscn" id="1_4axfq"]
 [ext_resource type="MeshLibrary" uid="uid://ch3ws5i86uka4" path="res://resources/tileset/tileset.tres" id="2_n0xd5"]
@@ -19,12 +19,13 @@
 [ext_resource type="AudioStream" uid="uid://c14u1xioipsc5" path="res://Assets/sounds/sfx/death.wav" id="17_nves2"]
 [ext_resource type="PackedScene" uid="uid://cuxevnk4c6ns8" path="res://Scenes/untitled.tscn" id="18_7t6wx"]
 [ext_resource type="PackedScene" uid="uid://dkw8ddv7euer1" path="res://Scenes/moveable_crate.tscn" id="19_24ssg"]
-[ext_resource type="PackedScene" uid="uid://ddsdg58radnl6" path="res://Scenes/torch.tscn" id="19_qb56k"]
+[ext_resource type="PackedScene" path="res://Scenes/torch.tscn" id="19_qb56k"]
 [ext_resource type="PackedScene" uid="uid://cvs17fs0yysbq" path="res://resources/sword/interactable_sword.tscn" id="20_13jfc"]
 [ext_resource type="AudioStream" uid="uid://utvfpmag805g" path="res://Assets/sounds/sfx/earthquake.wav" id="21_7682g"]
 [ext_resource type="PackedScene" uid="uid://dysvdy2mxmts" path="res://Scenes/MazeTrap.tscn" id="22_hjwfv"]
 [ext_resource type="PackedScene" uid="uid://dqikjbstss5mh" path="res://Scenes/crates_puzzle_hint.tscn" id="23_nwtif"]
 [ext_resource type="PackedScene" uid="uid://b6rtdeel2j5y8" path="res://podium.tscn" id="25_m5kq8"]
+[ext_resource type="Script" path="res://Scripts/FinalRoomTriggerArea3d.gd" id="26_nygjm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_06ib8"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -94,6 +95,9 @@ point_count = 11
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_30h7v"]
 size = Vector3(1, 6.12237, 5.52348)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ud3kk"]
+size = Vector3(1, 5.9585, 8.90027)
 
 [node name="Node3D" type="Node3D"]
 
@@ -246,9 +250,6 @@ plate_nr = 1
 
 [node name="Lever" parent="." instance=ExtResource("15_5ello")]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91068e-15, 0.210008, 1.70754, -39.9823)
-
-[node name="MeshInstance3D" parent="Lever" index="0"]
-transform = Transform3D(0.2, 0, 0, 0, 0.818056, 0.147366, 0, -0.891563, 0.135216, 0, -0.128848, 0)
 
 [node name="doorOpener" parent="Lever" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0537992, 0.0126824, 0.033576)
@@ -635,10 +636,26 @@ plate_nr = 4
 [node name="Node3D" parent="." instance=ExtResource("25_m5kq8")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -56.9013, -1.4677, 5.97073)
 
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.0017, 2.46472, 6.23146)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("26_nygjm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.33667, -0.0630493)
+shape = SubResource("BoxShape3D_ud3kk")
+
+[node name="newSpawnPoint" type="Node3D" parent="Area3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34.8405, 0.937276, -0.399238)
+
 [connection signal="kys" from="player" to="GameManager" method="player_death_by_trap"]
 [connection signal="interacted" from="interactable_sword" to="player" method="_on_interactable_sword_interacted"]
 [connection signal="openDoorSignal" from="Path3D/PathFollow3D/Node3D" to="Doors/Door3" method="door_destroy"]
 [connection signal="body_entered" from="Path3D/Area3D" to="Path3D/PathFollow3D/Node3D" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="closeDoor" from="Area3D" to="Doors/Door4" method="door_deactivated"]
+[connection signal="setSpawnPoint" from="Area3D" to="GameManager" method="finalRoomTrigger"]
 
 [editable path="Lever"]
 [editable path="Path3D/PathFollow3D/Node3D"]

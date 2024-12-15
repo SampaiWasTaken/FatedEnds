@@ -6,7 +6,7 @@ extends CharacterBody3D
 var wobble_timer: float = 0.0  
 var walking = false
 
-@export var sword_equiped:bool = false
+@export var sword_equiped:bool = true
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -26,10 +26,13 @@ var playingAudio = true
 signal kys
 
 func _ready() -> void:
-	$"CamContainer/arm/Low Poly Sword_003".visible = false
+	sword_equiped  = true
+	if not sword_equiped:
+		$"CamContainer/arm/Low Poly Sword_003".visible = false
 	#cam.current = true
 	add_to_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	resetAnimation()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("quit"):

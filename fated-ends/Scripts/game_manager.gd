@@ -28,6 +28,9 @@ var randomizedStoryBeats = ["You're stuck here, forever.",
 "You’ve cheated death, but now it cheats you.",
 "You are a prisoner of your own defiance."
 ]
+var respawnPoint:Vector3 = Vector3(0, 0, 0)
+var player_respawn_rotation:Vector3 = Vector3.ZERO
+var inFinalRoom:bool = false 
 
 func _ready() -> void:
 	for trap in get_tree().get_nodes_in_group("trap"):
@@ -58,5 +61,10 @@ func spawn_corpse():
 
 func reset_player_position():
 	player.resetAnimation()
-	player.rotation = Vector3.ZERO
-	player.transform.origin = Vector3(0, 0, 0)  
+	player.rotation = player_respawn_rotation
+	player.transform.origin = respawnPoint
+
+func finalRoomTrigger(newSpawnpoint:Vector3, newplayer_respawn_rotation:Vector3):
+	respawnPoint = newSpawnpoint
+	player_respawn_rotation = newplayer_respawn_rotation
+	inFinalRoom = true
